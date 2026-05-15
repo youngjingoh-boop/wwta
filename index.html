@@ -1,0 +1,1993 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WWTA · World Wide Tennis Academy</title>
+<meta name="description" content="시드니에서 15년. 테니스를 통해 만나고, 부딪히고, 같이 성장하는 사람들. WWTA는 코트가 아니라 커뮤니티입니다.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css">
+
+<style>
+:root{
+  --off-white:#F4F1EC;
+  --off-white-2:#EDE8DF;
+  --ink:#1A1A17;
+  --ink-soft:#2B2A26;
+  --ink-mute:rgba(26,26,23,.62);
+  --ink-faint:rgba(26,26,23,.32);
+  --hairline:rgba(26,26,23,.12);
+  --green:#1F3D2B;
+  --green-deep:#16301F;
+  --green-line:rgba(244,241,236,.18);
+  --clay:#E8633A;
+  --clay-press:#D2522B;
+  --sage:#A8B5A0;
+  --sage-soft:#C9D1C3;
+  --on-dark:#F4F1EC;
+  --on-dark-mute:rgba(244,241,236,.66);
+  --on-dark-faint:rgba(244,241,236,.32);
+
+  --font-display:"Space Grotesk","Pretendard Variable",ui-sans-serif,system-ui,sans-serif;
+  --font-editorial:"Instrument Serif", "Times New Roman", serif;
+  --font-body-ko:"Pretendard Variable","Pretendard",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Inter",sans-serif;
+  --font-body-en:"Inter","Pretendard Variable",ui-sans-serif,system-ui,sans-serif;
+
+  --section-y: clamp(96px, 14vw, 180px);
+  --gutter: clamp(20px, 5vw, 56px);
+  --max: 1240px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+html{
+  background:var(--off-white);
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+body{
+  font-family:var(--font-body-ko);
+  font-size:16px;
+  line-height:1.7;
+  font-weight:400;
+  letter-spacing:-0.005em;
+  overflow-x:hidden;
+  word-break:keep-all;
+  overflow-wrap:break-word;
+}
+
+/* ── Type system ─────────────────────────────────────────── */
+.h-display{
+  font-family:var(--font-display), var(--font-body-ko);
+  font-weight:500;
+  letter-spacing:-0.02em;
+  line-height:1.08;
+  color:var(--ink);
+  margin:0;
+  text-wrap:balance;
+}
+.h-section{
+  font-family:var(--font-display), var(--font-body-ko);
+  font-weight:500;
+  letter-spacing:-0.02em;
+  line-height:1.15;
+  font-size:clamp(28px, 4.4vw, 48px);
+  color:var(--ink);
+  margin:0 0 .8em;
+  text-wrap:balance;
+}
+.h-card{
+  font-family:var(--font-body-ko);
+  font-weight:600;
+  letter-spacing:-0.015em;
+  line-height:1.3;
+  font-size:clamp(20px, 2.2vw, 24px);
+  color:var(--ink);
+  margin:0 0 16px;
+}
+.p-lead{
+  font-size:clamp(17px, 1.5vw, 19px);
+  line-height:1.75;
+  color:var(--ink-soft);
+  max-width:34em;
+  margin:0;
+}
+.p-body{
+  font-size:16px;
+  line-height:1.75;
+  color:var(--ink-soft);
+  max-width:34em;
+  margin:0;
+}
+.caption{
+  font-family:var(--font-body-en);
+  font-weight:500;
+  font-size:11px;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--ink-mute);
+}
+.caption-on-dark{ color:var(--on-dark-mute) }
+.accent{ color:var(--clay) }
+em{
+  font-style:normal;
+  color:var(--clay);
+}
+
+/* ── Layout ──────────────────────────────────────────────── */
+.wrap{
+  width:100%;
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 var(--gutter);
+}
+section{ position:relative; }
+.section-pad{ padding: var(--section-y) 0; }
+
+.section-rule{
+  width:100%;
+  border:0;
+  height:1px;
+  background:var(--hairline);
+  margin:0;
+}
+.section-rule.on-dark{ background:var(--green-line) }
+
+/* Tennis court line motif divider */
+.court-rule{
+  display:block;
+  width:100%;
+  height:14px;
+  margin:0;
+  opacity:.55;
+}
+
+/* ── Header ──────────────────────────────────────────────── */
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  background:var(--green);
+  color:var(--on-dark);
+  border-bottom:1px solid var(--green-line);
+}
+.site-header .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:64px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:var(--on-dark);
+}
+.brand-mark{
+  width:22px; height:22px;
+  display:grid; place-items:center;
+}
+.brand-mark svg{ width:100%; height:100% }
+.brand-name{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:15px;
+  letter-spacing:0.16em;
+  white-space:nowrap;
+}
+.nav{ display:none; gap:36px; align-items:center }
+.nav a{
+  color:var(--on-dark);
+  text-decoration:none;
+  font-family:var(--font-body-ko);
+  font-size:14px;
+  font-weight:500;
+  letter-spacing:-0.005em;
+  opacity:.82;
+  transition:opacity .25s ease;
+}
+.nav a:hover{ opacity:1 }
+.header-cta{
+  display:inline-flex; align-items:center;
+  height:36px; padding:0 16px;
+  background:var(--clay);
+  color:var(--off-white);
+  border-radius:2px;
+  font-size:13px; font-weight:500;
+  letter-spacing:-0.005em;
+  text-decoration:none;
+  transition:background .25s ease;
+}
+.header-cta:hover{ background:var(--clay-press) }
+@media (min-width: 820px){
+  .nav{ display:flex }
+}
+
+/* ── Buttons ─────────────────────────────────────────────── */
+.btn-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:36px }
+.btn{
+  --bg:var(--clay);
+  --fg:var(--off-white);
+  --bd:transparent;
+  display:inline-flex; align-items:center; justify-content:center;
+  height:52px; padding:0 26px;
+  background:var(--bg);
+  color:var(--fg);
+  border:1px solid var(--bd);
+  border-radius:2px;
+  font-family:var(--font-body-ko);
+  font-size:15px; font-weight:500;
+  letter-spacing:-0.005em;
+  text-decoration:none;
+  cursor:pointer;
+  transition:background .28s ease, color .28s ease, border-color .28s ease, transform .15s ease;
+}
+.btn:hover{ background:var(--clay-press) }
+.btn:active{ transform:translateY(1px) }
+.btn-ghost{
+  --bg:transparent; --fg:var(--ink); --bd:rgba(26,26,23,.32);
+}
+.btn-ghost:hover{ --bg:rgba(26,26,23,.04); --bd:var(--ink) }
+.btn-ghost-on-dark{
+  --bg:transparent; --fg:var(--on-dark); --bd:rgba(244,241,236,.42);
+}
+.btn-ghost-on-dark:hover{ --bg:rgba(244,241,236,.06); --bd:var(--on-dark) }
+
+/* ── Fade-in motion ──────────────────────────────────────── */
+[data-fade]{
+  opacity:0;
+  transform:translateY(14px);
+  transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);
+  transition-delay:var(--d, 0ms);
+  will-change:opacity, transform;
+}
+[data-fade].in{
+  opacity:1;
+  transform:translateY(0);
+}
+@media (prefers-reduced-motion: reduce){
+  [data-fade]{ opacity:1; transform:none; transition:none }
+}
+
+/* ── Hero (1 & 8) ────────────────────────────────────────── */
+.hero{
+  position:relative;
+  min-height:min(100svh, 880px);
+  display:flex;
+  align-items:flex-end;
+  padding: 120px 0 var(--section-y);
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero-bg{
+  position:absolute; inset:0;
+  z-index:-1;
+  background:
+    radial-gradient(80% 60% at 78% 18%, rgba(255,210,160,.92) 0%, rgba(244,210,170,0) 60%),
+    radial-gradient(120% 90% at 30% 110%, rgba(31,61,43,.22) 0%, rgba(31,61,43,0) 55%),
+    linear-gradient(180deg, #F0DDC0 0%, #EFD6B6 32%, #E8C8A6 56%, #D9B997 78%, #C7A887 100%);
+}
+.hero-bg::after{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='400'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.10  0 0 0 0 0.10  0 0 0 0 0.09  0 0 0 0.12 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.45'/></svg>");
+  mix-blend-mode:multiply;
+  opacity:.55;
+  pointer-events:none;
+}
+.hero-court{
+  position:absolute;
+  left:50%; bottom:-18%;
+  transform:translateX(-50%);
+  width:min(140%, 1600px);
+  height:80%;
+  opacity:.35;
+  pointer-events:none;
+  z-index:-1;
+}
+.hero-court svg{ width:100%; height:100%; display:block }
+
+.hero-label{
+  position:absolute;
+  left:var(--gutter);
+  bottom:calc(var(--gutter) + 8px);
+  color:var(--ink-mute);
+}
+.hero-content{ position:relative; z-index:1; }
+.hero-eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  margin-bottom:28px;
+  color:var(--ink-mute);
+}
+.hero-eyebrow .dot{
+  width:6px; height:6px; border-radius:50%;
+  background:var(--clay);
+  display:inline-block;
+}
+.hero h1{
+  font-size:clamp(38px, 7.2vw, 96px);
+  max-width:14ch;
+}
+.hero .sub{
+  margin-top:28px;
+  max-width:36ch;
+  font-size:clamp(15px, 1.5vw, 18px);
+  color:var(--ink-soft);
+}
+
+.hero-closing{
+  background:var(--green);
+  color:var(--on-dark);
+}
+.hero-closing .hero-bg{
+  background:
+    radial-gradient(70% 55% at 80% 14%, rgba(232,99,58,.30) 0%, rgba(232,99,58,0) 60%),
+    radial-gradient(120% 90% at 20% 100%, rgba(0,0,0,.45) 0%, rgba(0,0,0,0) 55%),
+    linear-gradient(180deg, #224432 0%, #1F3D2B 50%, #182F22 100%);
+}
+.hero-closing .hero-bg::after{ opacity:.35 }
+.hero-closing .hero-court{ opacity:.18 }
+.hero-closing h1{ color:var(--on-dark) }
+.hero-closing .sub{ color:var(--on-dark-mute) }
+.hero-closing .hero-eyebrow{ color:var(--on-dark-mute) }
+.hero-closing .hero-label{ color:var(--on-dark-faint) }
+.hero-closing em{ color:#F09267 }
+
+/* ── Section 2 — Problem ─────────────────────────────────── */
+.problem .grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:48px;
+}
+.problem .problem-title{
+  font-size:clamp(32px, 5.2vw, 60px);
+  max-width:18ch;
+}
+.problem .body p + p{ margin-top:1.5em }
+.problem .body{ max-width:38em }
+@media (min-width: 880px){
+  .problem .grid{ grid-template-columns: 1.05fr 1.2fr; gap: clamp(60px, 8vw, 120px); align-items:start }
+  .problem .body{ padding-top:14px }
+}
+
+/* ── Section 3 — Three values ────────────────────────────── */
+.values .head{ max-width:34ch; margin-bottom:clamp(60px, 8vw, 96px) }
+.values .cards{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:48px;
+}
+.value-card{
+  padding-top:28px;
+  border-top:1px solid var(--ink);
+}
+.value-card .num{
+  font-family:var(--font-display);
+  font-size:13px;
+  font-weight:500;
+  letter-spacing:0.16em;
+  color:var(--clay);
+  margin-bottom:28px;
+}
+.value-card .ttl{
+  font-family:var(--font-body-ko);
+  font-weight:600;
+  font-size:clamp(20px, 2.2vw, 26px);
+  line-height:1.35;
+  letter-spacing:-0.015em;
+  color:var(--ink);
+  margin:0 0 20px;
+  max-width:14ch;
+}
+.value-card .copy{
+  color:var(--ink-soft);
+  font-size:15.5px;
+  line-height:1.75;
+}
+@media (min-width: 820px){
+  .values .cards{ grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 56px) }
+}
+
+/* ── Section 4 — Trust (dark) ────────────────────────────── */
+.trust{
+  background:var(--green);
+  color:var(--on-dark);
+  position:relative;
+  overflow:hidden;
+}
+.trust .head{
+  display:grid; gap:48px;
+  grid-template-columns:1fr;
+  margin-bottom: clamp(72px, 9vw, 120px);
+}
+.trust h2{
+  color:var(--on-dark);
+  font-size:clamp(28px, 4.6vw, 54px);
+  max-width:18ch;
+}
+.trust .body{
+  color:var(--on-dark-mute);
+  font-size:clamp(15px, 1.4vw, 18px);
+  max-width:34em;
+  line-height:1.75;
+}
+@media (min-width: 880px){
+  .trust .head{ grid-template-columns: 1.05fr 1fr; gap: clamp(60px, 8vw, 120px); align-items:start }
+  .trust .body{ padding-top:14px }
+}
+.stats{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:48px 24px;
+  border-top:1px solid var(--green-line);
+  padding-top:48px;
+}
+.stat .num{
+  font-family:var(--font-display);
+  font-weight:500;
+  font-size:clamp(48px, 7vw, 88px);
+  letter-spacing:-0.03em;
+  line-height:1;
+  color:var(--on-dark);
+  display:flex; align-items:baseline; gap:.05em;
+}
+.stat .num .unit{
+  font-size:.42em;
+  color:var(--clay);
+  letter-spacing:0;
+  margin-left:.06em;
+  font-weight:500;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.stat .lbl{
+  margin-top:18px;
+  color:var(--on-dark-mute);
+  font-size:14px;
+  line-height:1.5;
+  max-width:18ch;
+}
+@media (min-width: 760px){
+  .stats{ grid-template-columns: repeat(4, 1fr) }
+}
+
+/* ── Section 5 — Coaches ─────────────────────────────────── */
+.coaches .head{
+  display:grid; gap:36px; grid-template-columns:1fr;
+  margin-bottom: clamp(56px, 7vw, 88px);
+}
+@media (min-width: 880px){
+  .coaches .head{ grid-template-columns: 1.1fr 1fr; gap: clamp(48px, 7vw, 100px); align-items:end }
+}
+.coach-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 2.5vw, 28px) clamp(16px, 2vw, 24px);
+}
+@media (min-width: 760px){
+  .coach-grid{ grid-template-columns: repeat(3, 1fr) }
+}
+.coach{
+  display:flex; flex-direction:column;
+}
+.coach .photo{
+  aspect-ratio: 4 / 5;
+  border-radius:2px;
+  overflow:hidden;
+  position:relative;
+}
+.coach .meta{
+  margin-top:18px;
+  display:flex; flex-direction:column; gap:4px;
+}
+.coach .name{
+  font-family:var(--font-body-ko);
+  font-weight:600;
+  font-size:16px;
+  letter-spacing:-0.01em;
+  color:var(--ink);
+}
+.coach .bio{
+  font-size:13px;
+  color:var(--ink-mute);
+  line-height:1.5;
+}
+
+/* Photo placeholder treatments */
+.ph{
+  width:100%; height:100%;
+  position:relative;
+  overflow:hidden;
+}
+.ph::after{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  mix-blend-mode:multiply;
+  opacity:.55;
+  pointer-events:none;
+}
+.ph-a{ background: linear-gradient(160deg, #F2C893 0%, #D89967 55%, #8E5E3D 100%); }
+.ph-b{ background: linear-gradient(160deg, #E9D9BC 0%, #C2B292 50%, #6F7E68 100%); }
+.ph-c{ background: linear-gradient(160deg, #F0CFA5 0%, #C97C53 60%, #3A4A36 100%); }
+.ph-d{ background: linear-gradient(160deg, #D6CFB8 0%, #9DA793 55%, #3F5440 100%); }
+.ph-e{ background: linear-gradient(170deg, #F2D7B0 0%, #E29670 55%, #7E4A30 100%); }
+.ph-f{ background: linear-gradient(160deg, #DCD0AE 0%, #B2A584 50%, #2E4031 100%); }
+
+.coaches-cta{
+  margin-top: clamp(48px, 6vw, 72px);
+  display:flex; justify-content:flex-start;
+}
+
+/* ── Section 6 — Testimonials ────────────────────────────── */
+.reviews .head{ max-width:34ch; margin-bottom: clamp(56px, 7vw, 88px) }
+.review-grid{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: clamp(40px, 5vw, 64px) clamp(28px, 4vw, 56px);
+}
+@media (min-width: 820px){
+  .review-grid{ grid-template-columns: repeat(3, 1fr) }
+}
+.review .mark{
+  font-family:var(--font-display);
+  font-size:36px;
+  line-height:1;
+  color:var(--clay);
+  margin-bottom:18px;
+}
+.review .quote{
+  font-family:var(--font-body-ko);
+  font-size:17px;
+  line-height:1.75;
+  color:var(--ink);
+  margin:0 0 28px;
+  letter-spacing:-0.01em;
+  max-width:24em;
+}
+.review .who{
+  display:flex; align-items:center; gap:14px;
+  padding-top:20px;
+  border-top:1px solid var(--hairline);
+}
+.review .avatar{
+  width:40px; height:40px; border-radius:50%;
+  overflow:hidden;
+  flex:0 0 40px;
+}
+.review .who-meta .nm{
+  font-size:13.5px; font-weight:600; color:var(--ink); letter-spacing:-0.005em;
+}
+.review .who-meta .sub{
+  font-size:12px; color:var(--ink-mute); margin-top:2px;
+}
+
+/* ── Section 7 — How to start ────────────────────────────── */
+.how .head{ max-width:30ch; margin-bottom: clamp(56px, 7vw, 88px) }
+.steps{
+  display:grid;
+  grid-template-columns:1fr;
+  gap: clamp(40px, 5vw, 56px);
+}
+@media (min-width: 820px){
+  .steps{ grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 56px) }
+}
+.step{
+  padding-top:28px;
+  border-top:1px solid var(--ink);
+}
+.step .n{
+  font-family:var(--font-display);
+  font-size:13px; font-weight:500;
+  letter-spacing:0.16em;
+  color:var(--clay);
+  margin-bottom:24px;
+}
+.step .t{
+  font-family:var(--font-body-ko);
+  font-weight:600;
+  font-size:20px;
+  letter-spacing:-0.015em;
+  color:var(--ink);
+  margin:0 0 14px;
+  line-height:1.35;
+}
+.step .d{
+  font-size:15px;
+  line-height:1.7;
+  color:var(--ink-soft);
+  margin:0;
+}
+.how-cta{ margin-top: clamp(56px, 7vw, 80px); }
+
+/* ── Footer ──────────────────────────────────────────────── */
+.site-footer{
+  background:var(--green-deep);
+  color:var(--on-dark);
+  padding: clamp(72px, 9vw, 120px) 0 48px;
+}
+.foot-top{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:56px;
+  padding-bottom: clamp(48px, 6vw, 72px);
+  border-bottom:1px solid var(--green-line);
+}
+@media (min-width: 820px){
+  .foot-top{ grid-template-columns: 1.2fr 1fr 1fr; gap: clamp(40px, 5vw, 80px) }
+}
+.foot-brand .brand-name{ font-size:18px; color:var(--on-dark) }
+.foot-brand p{
+  margin: 18px 0 0;
+  color:var(--on-dark-mute);
+  font-size:14px;
+  line-height:1.7;
+  max-width:28em;
+}
+.foot-col h4{
+  font-family:var(--font-body-en);
+  font-size:11px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--on-dark-mute);
+  font-weight:500;
+  margin:0 0 18px;
+}
+.foot-col ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px }
+.foot-col a{
+  color:var(--on-dark);
+  text-decoration:none;
+  font-size:14.5px;
+  letter-spacing:-0.005em;
+  opacity:.86;
+  transition:opacity .25s ease;
+}
+.foot-col a:hover{ opacity:1; color:#F09267 }
+
+.foot-bottom{
+  padding-top:32px;
+  display:flex; flex-wrap:wrap; gap:20px;
+  justify-content:space-between; align-items:center;
+}
+.foot-bottom .caption{ color:var(--on-dark-faint) }
+
+/* ── Tiny utilities ──────────────────────────────────────── */
+.eyebrow{
+  display:inline-flex; align-items:center; gap:10px;
+  margin-bottom:24px;
+  color:var(--ink-mute);
+}
+.eyebrow .dash{
+  width:24px; height:1px; background:currentColor; display:inline-block;
+}
+.eyebrow.on-dark{ color:var(--on-dark-mute) }
+
+/* ── Selection ───────────────────────────────────────────── */
+::selection{ background:var(--clay); color:#fff }
+
+/* ════════════════════════════════════════════════════════
+   KINETIC HERO — Editorial golden hour + 3D ball physics
+   ════════════════════════════════════════════════════════ */
+
+.hero-kinetic{
+  min-height: min(100svh, 940px);
+  padding: 0;
+  align-items: stretch;
+  overflow: hidden;
+}
+
+/* Real golden-hour sky: dusty teal-grey high → peach mid → warm cream horizon.
+   No more muddy brown — this reads as light, atmospheric, cinematic. */
+.hero-kinetic .hero-bg{
+  background:
+    /* sun glow upper-right */
+    radial-gradient(54% 42% at 86% 14%, rgba(255, 226, 178, 0.85) 0%, rgba(255, 226, 178, 0) 60%),
+    /* warm horizon band lower-center */
+    radial-gradient(90% 48% at 50% 102%, rgba(232, 168, 122, 0.55) 0%, rgba(232, 168, 122, 0) 65%),
+    /* sky atmosphere top */
+    linear-gradient(180deg,
+      #E2D4C0 0%,
+      #ECDCC2 24%,
+      #F0DBBE 50%,
+      #F3D2AC 74%,
+      #EDC096 100%);
+}
+
+/* Editorial film grain on top */
+.hero-kinetic .hero-bg::after{
+  content:"";
+  position:absolute; inset:0;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.07  0 0 0 0 0.05  0 0 0 0.16 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply;
+  opacity: .50;
+  pointer-events:none;
+}
+
+/* Court line perspective shadow on the ground */
+.hero-kinetic .hero-court{
+  bottom:-30%;
+  height: 64%;
+  opacity: .18;
+}
+.hero-kinetic .hero-court svg g{ stroke:#3D2A18; stroke-width: 1; }
+
+/* Editorial oversized italic numeral backdrop — magazine cover trope, done well */
+.hero-numeral{
+  position:absolute;
+  z-index: 1;
+  bottom: clamp(-40px, -3vw, -20px);
+  right: clamp(-30px, -2vw, -10px);
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(280px, 42vw, 620px);
+  line-height: 0.78;
+  letter-spacing: -0.05em;
+  color: var(--ink);
+  opacity: 0.13;
+  pointer-events:none;
+  user-select:none;
+  white-space:nowrap;
+}
+.hero-numeral .y{ font-size: 0.34em; letter-spacing:-0.02em; opacity:.85; vertical-align: 0.62em; margin-left: -0.05em; }
+.hero-closing .hero-numeral{ color: #F4F1EC; opacity: 0.09; }
+
+/* Ball stage — sits between numeral and content */
+.ball-stage{
+  position:absolute;
+  inset: 64px 0 0 0;
+  pointer-events:none;
+  z-index: 2;
+  overflow:hidden;
+}
+
+.ball{
+  position:absolute;
+  top:0; left:0;
+  width: clamp(56px, 6.8vw, 96px);
+  aspect-ratio:1;
+  will-change: transform, opacity;
+  transform-origin: center;
+}
+.ball-inner{
+  width:100%;
+  height:100%;
+  will-change: transform;
+  transform-origin: center;
+  position:relative;
+}
+/* Layer that rotates with the ball (sphere + seams) */
+.ball-spin{
+  position:absolute;
+  inset:0;
+  will-change: transform;
+  transform-origin: center;
+}
+/* Layer that stays fixed in screen-space (lighting: SSS, rim, specular) */
+.ball-light{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+}
+.ball svg{
+  width:100%; height:100%;
+  display:block;
+}
+.ball-main svg{
+  filter:
+    drop-shadow(0 14px 22px rgba(60, 38, 16, 0.32))
+    drop-shadow(0 3px 6px rgba(60, 38, 16, 0.22));
+}
+.ball-trail{
+  filter: blur(0.7px);
+}
+.ball-trail svg{ filter: drop-shadow(0 8px 14px rgba(60, 38, 16, 0.14)); }
+
+/* Ground shadow */
+.ball-shadow{
+  position:absolute;
+  top:0; left:0;
+  width: clamp(56px, 6.8vw, 96px);
+  height: clamp(12px, 1.6vw, 22px);
+  background: radial-gradient(50% 100% at 50% 50%, rgba(40, 22, 8, 0.50) 0%, rgba(40, 22, 8, 0) 70%);
+  border-radius:50%;
+  will-change: transform, opacity;
+  filter: blur(0.4px);
+}
+
+/* Dust particles spawned on bounce */
+.dust{
+  position:absolute;
+  top:0; left:0;
+  width: 8px;
+  height: 8px;
+  border-radius:50%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(200, 178, 138, 0.85) 0%, rgba(200, 178, 138, 0) 70%);
+  pointer-events:none;
+  will-change: transform, opacity;
+  mix-blend-mode: multiply;
+}
+.hero-closing .dust{
+  background: radial-gradient(50% 50% at 50% 50%, rgba(244, 222, 192, 0.55) 0%, rgba(244, 222, 192, 0) 70%);
+  mix-blend-mode: screen;
+}
+
+/* Bounce impact flash line */
+.bounce-flash{
+  position:absolute;
+  top:0; left:0;
+  width: clamp(80px, 10vw, 140px);
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--clay) 50%, transparent 100%);
+  pointer-events:none;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* ── Editorial typography in hero ───────────────────────── */
+.hero-kinetic .hero-content{
+  position:relative;
+  z-index: 3;
+  min-height: min(100svh, 940px);
+  padding-top: clamp(140px, 16vw, 200px);
+  padding-bottom: clamp(96px, 11vw, 140px);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+}
+
+.hero-kinetic h1{
+  font-family: var(--font-body-ko);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+  font-size: clamp(44px, 8.6vw, 116px);
+  color: var(--ink);
+  margin: 0;
+  display:flex;
+  flex-direction:column;
+  text-wrap: balance;
+  max-width: none;
+}
+.hero-kinetic h1 .kw1,
+.hero-kinetic h1 .kw2,
+.hero-kinetic h1 .kw3{ display:block; }
+.hero-kinetic h1 .kw2{
+  padding-left: clamp(20px, 3.6vw, 84px);
+}
+.hero-kinetic h1 em{
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--clay);
+  letter-spacing: -0.02em;
+  /* small visual offset so the italic seats properly */
+  display: inline-block;
+  transform: translateY(0.04em);
+  white-space: nowrap;
+}
+
+.hero-kinetic .sub{
+  margin-top: clamp(34px, 3.6vw, 48px);
+  font-size: clamp(16px, 1.4vw, 18px);
+  line-height: 1.78;
+  max-width: 32ch;
+  color: var(--ink-soft);
+  font-weight: 400;
+}
+.hero-kinetic .btn-row{ margin-top: clamp(36px, 4vw, 48px); }
+
+/* Top rail — editorial masthead, Instrument Serif italic touch */
+.hero-rail{
+  position:absolute;
+  top: clamp(22px, 3.6vw, 40px);
+  left: var(--gutter);
+  right: var(--gutter);
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:16px;
+  z-index:5;
+  color: var(--ink-mute);
+  pointer-events:none;
+}
+.hero-rail .left, .hero-rail .right{
+  display:flex; align-items:baseline; gap:10px;
+  font-family: var(--font-body-en);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--ink-mute);
+}
+.hero-rail .ital{
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.hero-rail .right{ font-variant-numeric: tabular-nums; }
+.hero-rail .dot{
+  width:5px; height:5px;
+  background: var(--clay);
+  border-radius:50%;
+  display:inline-block;
+  align-self:center;
+  opacity:.9;
+}
+.hero-rail .div{
+  width:14px; height:1px;
+  background: currentColor;
+  opacity:.35;
+  align-self:center;
+}
+
+/* Annotations off */
+.hero-annot{ display:none !important; }
+
+/* Scroll indicator — quieter */
+.hero-foot{
+  position:absolute;
+  left:50%;
+  bottom: clamp(20px, 3vw, 32px);
+  transform: translateX(-50%);
+  z-index:4;
+  color: var(--ink-mute);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  pointer-events:none;
+}
+.hero-foot .lbl{
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-size: 14px;
+  letter-spacing: 0;
+  color: var(--ink-mute);
+  opacity: .85;
+}
+.hero-foot .scroll-line{
+  display:block;
+  width:1px;
+  height:32px;
+  background: rgba(26,26,23,.18);
+  position:relative;
+  overflow:hidden;
+}
+.hero-foot .scroll-line::after{
+  content:"";
+  position:absolute;
+  top:-50%;
+  left:0;
+  width:100%;
+  height:50%;
+  background: var(--clay);
+  animation: scrollDot 2.8s cubic-bezier(.5,0,.5,1) infinite;
+}
+@keyframes scrollDot{
+  0%{ top:-50%; }
+  100%{ top:100%; }
+}
+
+/* ── Closing hero — cinematic dusk variant ──────────────── */
+.hero-closing.hero-kinetic .hero-bg{
+  background:
+    radial-gradient(56% 44% at 88% 16%, rgba(232, 132, 78, 0.42) 0%, rgba(232, 132, 78, 0) 62%),
+    radial-gradient(82% 50% at 50% 104%, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0) 65%),
+    linear-gradient(180deg,
+      #1A3424 0%,
+      #1F3D2B 38%,
+      #1B3526 70%,
+      #0F2417 100%);
+}
+.hero-closing.hero-kinetic .hero-bg::after{ opacity: .35; }
+.hero-closing.hero-kinetic .hero-court svg g{ stroke:#F4F1EC; opacity:.4; }
+.hero-closing.hero-kinetic h1{ color: var(--on-dark); }
+.hero-closing.hero-kinetic em{ color: #F89167; }
+.hero-closing.hero-kinetic .sub{ color: var(--on-dark-mute); }
+.hero-closing.hero-kinetic .hero-rail{ color: var(--on-dark-mute); }
+.hero-closing.hero-kinetic .hero-rail .left,
+.hero-closing.hero-kinetic .hero-rail .right{ color: var(--on-dark-mute); }
+.hero-closing.hero-kinetic .hero-rail .ital{ color: var(--on-dark); }
+.hero-closing.hero-kinetic .hero-foot{ color: var(--on-dark-mute); }
+.hero-closing.hero-kinetic .hero-foot .lbl{ color: var(--on-dark-mute); }
+.hero-closing.hero-kinetic .hero-foot .scroll-line{ background: rgba(244,241,236,.20); }
+.hero-closing.hero-kinetic .ball-shadow{
+  background: radial-gradient(50% 100% at 50% 50%, rgba(0,0,0,.55) 0%, rgba(0,0,0,0) 70%);
+}
+.hero-closing.hero-kinetic .ball-main svg{
+  filter:
+    drop-shadow(0 14px 24px rgba(0,0,0,.42))
+    drop-shadow(0 3px 6px rgba(0,0,0,.32));
+}
+
+</style>
+</head>
+<body>
+
+<!-- ░░░ Header ░░░ -->
+<header class="site-header">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="WWTA 홈">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="12" cy="12" r="9.3"/>
+          <path d="M3.4 8.5 C 8 11, 16 11, 20.6 8.5"/>
+          <path d="M3.4 15.5 C 8 13, 16 13, 20.6 15.5"/>
+        </svg>
+      </span>
+      <span class="brand-name">WWTA</span>
+    </a>
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="#problem">소개</a>
+      <a href="#coaches">코치진</a>
+      <a href="#reviews">멤버 후기</a>
+      <a href="#how">시작하기</a>
+    </nav>
+    <a class="header-cta" href="#book">첫 클래스 예약</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ░░░ 1. Hero ░░░ -->
+<section class="hero hero-kinetic" aria-labelledby="hero-title">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-court" aria-hidden="true">
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax meet">
+      <g fill="none" stroke="#2A1F12" stroke-width="1.2">
+        <path d="M -200 880 L 1800 880"/>
+        <path d="M 80 720 L 1520 720"/>
+        <path d="M 260 580 L 1340 580"/>
+        <path d="M 800 880 L 800 580"/>
+        <path d="M 380 720 L 380 880"/>
+        <path d="M 1220 720 L 1220 880"/>
+        <path d="M 540 720 L 540 580"/>
+        <path d="M 1060 720 L 1060 580"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Editorial numeral backdrop -->
+  <div class="hero-numeral" aria-hidden="true">15<span class="y">yrs</span></div>
+
+  <!-- Animated ball stage (built by JS) -->
+  <div class="ball-stage" aria-hidden="true"></div>
+
+  <!-- Top label rail -->
+  <div class="hero-rail" data-fade>
+    <div class="left">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="ital">World Wide Tennis Academy</span>
+      <span>· Sydney</span>
+    </div>
+    <div class="right">
+      <span class="hero-clock">--:--:--</span>
+      <span class="div" aria-hidden="true"></span>
+      <span class="ital">Est. 2011</span>
+    </div>
+  </div>
+
+  <div class="wrap hero-content">
+    <h1 id="hero-title" data-fade style="--d:120ms">
+      <span class="kw1">화면 밖에서,</span>
+      <span class="kw2">진짜로 살아</span>
+      <span class="kw3">있는 <em>시간</em>.</span>
+    </h1>
+    <p class="sub" data-fade style="--d:300ms">
+      시드니에서 15년. 테니스를 통해 만나고, 부딪히고, 같이 성장하는 사람들.
+      WWTA는 코트가 아니라 커뮤니티입니다.
+    </p>
+    <div class="btn-row" data-fade style="--d:420ms">
+      <a href="#book" class="btn">첫 클래스 예약하기</a>
+      <a href="#coaches" class="btn btn-ghost">코치진 만나보기</a>
+    </div>
+  </div>
+
+  <div class="hero-foot" aria-hidden="true">
+    <span class="lbl">Scroll</span>
+    <span class="scroll-line"></span>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ░░░ 2. Problem ░░░ -->
+<section class="problem section-pad" id="problem">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="eyebrow caption" data-fade>
+          <span class="dash" aria-hidden="true"></span>
+          <span>01 — Why WWTA</span>
+        </div>
+        <h2 class="h-display problem-title" data-fade style="--d:120ms" id="problem-h">
+          모든 게 자동으로<br>추천되는 시대에,<br>우리가 <em>잃어가는 것</em>.
+        </h2>
+      </div>
+      <div class="body">
+        <p class="p-lead" data-fade style="--d:160ms">
+          다음에 볼 영상도, 들을 노래도, 살 물건도 알고리즘이 정해줍니다. 편하지만, 어딘가 허전합니다.
+        </p>
+        <p class="p-lead" data-fade style="--d:280ms">
+          직접 부딪히고, 실패하고, 사람 눈을 보며 웃는 경험. 몸으로 익히고 머리를 비우는 두 시간. 그건 아웃소싱할 수 없습니다.
+        </p>
+        <p class="p-lead" data-fade style="--d:400ms">
+          WWTA는 그 감각을 되찾는 곳입니다. 테니스는 수단이고, 진짜는 그 안에서 일어나는 일들입니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ░░░ 3. Three values ░░░ -->
+<section class="values section-pad">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow caption" data-fade>
+        <span class="dash" aria-hidden="true"></span>
+        <span>02 — On Court</span>
+      </div>
+      <h2 class="h-section" data-fade style="--d:120ms">
+        코트에서 일어나는<br>세 가지.
+      </h2>
+    </div>
+
+    <div class="cards">
+      <article class="value-card" data-fade>
+        <div class="num">01 / Community</div>
+        <h3 class="ttl">여기선 아무도 당신을 스킵하지 않습니다</h3>
+        <p class="copy">
+          300명이 넘는 멤버. 15년 동안 이 코트에서 만들어진 건 실력만이 아닙니다 — 같이 땀 흘리고, 같이 늙어갈 친구들입니다. 알림은 끄고 오셔도 됩니다. 대신 진짜 얼굴들이 있습니다.
+        </p>
+      </article>
+
+      <article class="value-card" data-fade style="--d:140ms">
+        <div class="num">02 / Growth</div>
+        <h3 class="ttl">안 되던 것이 되는 순간</h3>
+        <p class="copy">
+          잘 치게 되는 게 목적이 아닙니다. 막힌 것을 뚫고 나가는 그 감각 — 한 번 배우면 코트 밖에서도 쓰게 됩니다. 호주 최고 수준의 코치 10명이 가르치는 건, 포핸드가 아니라 성장하는 방식입니다.
+        </p>
+      </article>
+
+      <article class="value-card" data-fade style="--d:280ms">
+        <div class="num">03 / Reset</div>
+        <h3 class="ttl">2026년의 가장 현명한 자기 관리</h3>
+        <p class="copy">
+          운동이 아니라 리셋입니다. 땀 흘리고, 웃고, 머리를 비우는 시간. AI가 모든 걸 대신하는 시대에, 당신의 몸과 집중력만큼은 직접 챙겨야 합니다.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 4. Trust / Scale (dark) ░░░ -->
+<section class="trust section-pad">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow caption on-dark" data-fade>
+          <span class="dash" aria-hidden="true"></span>
+          <span>03 — Since 2011</span>
+        </div>
+        <h2 class="h-section" data-fade style="--d:120ms" id="trust-h">
+          15년이라는 건,<br>유행이 아니라는 뜻입니다.
+        </h2>
+      </div>
+      <p class="body" data-fade style="--d:200ms">
+        시드니 곳곳의 코트. 일 년 내내 열리는 대회. 호주 최고 수준의 코치진.
+        화려해서가 아니라 — 처음 라켓을 잡는 사람도, 진심으로 실력을 키우려는 사람도 갈 곳이 있다는 뜻입니다.
+      </p>
+    </div>
+
+    <div class="stats">
+      <div class="stat" data-fade>
+        <div class="num"><span data-count="15" data-suffix="">0</span><span class="unit">년+</span></div>
+        <div class="lbl">시드니에서 운영</div>
+      </div>
+      <div class="stat" data-fade style="--d:120ms">
+        <div class="num"><span data-count="300">0</span><span class="unit">명+</span></div>
+        <div class="lbl">함께하는 멤버</div>
+      </div>
+      <div class="stat" data-fade style="--d:240ms">
+        <div class="num"><span data-count="10">0</span><span class="unit">명</span></div>
+        <div class="lbl">호주 최고 수준의 코치진</div>
+      </div>
+      <div class="stat" data-fade style="--d:360ms">
+        <div class="num"><span data-count="365">0</span><span class="unit">일</span></div>
+        <div class="lbl">시드니 전역 코트 · 연중 대회</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 5. Coaches ░░░ -->
+<section class="coaches section-pad" id="coaches">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="eyebrow caption" data-fade>
+          <span class="dash" aria-hidden="true"></span>
+          <span>04 — Coaches</span>
+        </div>
+        <h2 class="h-section" data-fade style="--d:120ms">
+          좋은 코치는 폼을 고치고,<br>훌륭한 코치는 <em>사람을 키웁니다</em>.
+        </h2>
+      </div>
+      <p class="p-lead" data-fade style="--d:200ms">
+        WWTA의 코치 10명은 호주 최고 수준의 실력과 경험을 갖췄습니다.
+        하지만 멤버들이 기억하는 건 기술 지적이 아니라 — "할 수 있다"고 믿게 만들어준 순간들입니다.
+      </p>
+    </div>
+
+    <div class="coach-grid">
+      <article class="coach" data-fade>
+        <div class="photo"><div class="ph ph-a" aria-label="코치 사진 자리"></div></div>
+        <div class="meta">
+          <div class="name">Head Coach · 이름</div>
+          <div class="bio">한 줄 소개 자리</div>
+        </div>
+      </article>
+      <article class="coach" data-fade style="--d:100ms">
+        <div class="photo"><div class="ph ph-b" aria-label="코치 사진 자리"></div></div>
+        <div class="meta">
+          <div class="name">Senior Coach · 이름</div>
+          <div class="bio">한 줄 소개 자리</div>
+        </div>
+      </article>
+      <article class="coach" data-fade style="--d:200ms">
+        <div class="photo"><div class="ph ph-c" aria-label="코치 사진 자리"></div></div>
+        <div class="meta">
+          <div class="name">Coach · 이름</div>
+          <div class="bio">한 줄 소개 자리</div>
+        </div>
+      </article>
+      <article class="coach" data-fade style="--d:300ms">
+        <div class="photo"><div class="ph ph-d" aria-label="코치 사진 자리"></div></div>
+        <div class="meta">
+          <div class="name">Coach · 이름</div>
+          <div class="bio">한 줄 소개 자리</div>
+        </div>
+      </article>
+      <article class="coach" data-fade style="--d:400ms">
+        <div class="photo"><div class="ph ph-e" aria-label="코치 사진 자리"></div></div>
+        <div class="meta">
+          <div class="name">Coach · 이름</div>
+          <div class="bio">한 줄 소개 자리</div>
+        </div>
+      </article>
+      <article class="coach" data-fade style="--d:500ms">
+        <div class="photo"><div class="ph ph-f" aria-label="코치 사진 자리"></div></div>
+        <div class="meta">
+          <div class="name">Coach · 이름</div>
+          <div class="bio">한 줄 소개 자리</div>
+        </div>
+      </article>
+    </div>
+
+    <div class="coaches-cta" data-fade>
+      <a href="#coaches-all" class="btn btn-ghost">코치진 전체 보기</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ░░░ 6. Reviews ░░░ -->
+<section class="reviews section-pad" id="reviews">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow caption" data-fade>
+        <span class="dash" aria-hidden="true"></span>
+        <span>05 — Members</span>
+      </div>
+      <h2 class="h-section" data-fade style="--d:120ms">
+        우리가 설명하는 것보다,<br>그들이 말하는 게 정확합니다.
+      </h2>
+    </div>
+
+    <div class="review-grid">
+      <article class="review" data-fade>
+        <div class="mark" aria-hidden="true">"</div>
+        <p class="quote">퇴근하고 코트 오는 게 일주일 중 제일 기다려지는 시간이에요. 두 시간 동안만큼은 진짜로 다른 사람이 되는 느낌이에요.</p>
+        <div class="who">
+          <div class="avatar"><div class="ph ph-b"></div></div>
+          <div class="who-meta">
+            <div class="nm">멤버 · 이름 자리</div>
+            <div class="sub">3년차 · 화목 저녁반</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="review" data-fade style="--d:140ms">
+        <div class="mark" aria-hidden="true">"</div>
+        <p class="quote">처음엔 운동하러 왔는데, 지금은 사람들 보러 옵니다. 같이 늙어갈 친구들을 여기서 만났어요.</p>
+        <div class="who">
+          <div class="avatar"><div class="ph ph-d"></div></div>
+          <div class="who-meta">
+            <div class="nm">멤버 · 이름 자리</div>
+            <div class="sub">5년차 · 주말 그룹</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="review" data-fade style="--d:280ms">
+        <div class="mark" aria-hidden="true">"</div>
+        <p class="quote">"안 되겠다" 싶었던 게, 어느 날 갑자기 되더라고요. 코치님이 그 순간을 같이 봐주셨어요. 그게 오래 남아요.</p>
+        <div class="who">
+          <div class="avatar"><div class="ph ph-a"></div></div>
+          <div class="who-meta">
+            <div class="nm">멤버 · 이름 자리</div>
+            <div class="sub">1년차 · 초보반</div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<hr class="section-rule">
+
+<!-- ░░░ 7. How to start ░░░ -->
+<section class="how section-pad" id="how">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow caption" data-fade>
+        <span class="dash" aria-hidden="true"></span>
+        <span>06 — Getting Started</span>
+      </div>
+      <h2 class="h-section" data-fade style="--d:120ms">
+        라켓이 없어도,<br>경험이 없어도 괜찮습니다.
+      </h2>
+    </div>
+
+    <div class="steps">
+      <div class="step" data-fade>
+        <div class="n">Step 01</div>
+        <h3 class="t">첫 클래스 예약</h3>
+        <p class="d">부담 없이, 일단 와서 느껴보세요.</p>
+      </div>
+      <div class="step" data-fade style="--d:140ms">
+        <div class="n">Step 02</div>
+        <h3 class="t">레벨에 맞는 그룹 찾기</h3>
+        <p class="d">처음이든 경력자든, 맞는 자리가 있습니다.</p>
+      </div>
+      <div class="step" data-fade style="--d:280ms">
+        <div class="n">Step 03</div>
+        <h3 class="t">커뮤니티의 일부 되기</h3>
+        <p class="d">클래스, 대회, 그리고 그 사이의 모든 것.</p>
+      </div>
+    </div>
+
+    <div class="how-cta" data-fade>
+      <a href="#book" class="btn">첫 클래스 예약하기</a>
+    </div>
+  </div>
+</section>
+
+<!-- ░░░ 8. Closing hero ░░░ -->
+<section class="hero hero-closing hero-kinetic" id="book" aria-labelledby="closing-title">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-court" aria-hidden="true">
+    <svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax meet">
+      <g fill="none" stroke="#F4F1EC" stroke-width="1.4">
+        <path d="M -200 880 L 1800 880"/>
+        <path d="M 80 720 L 1520 720"/>
+        <path d="M 260 580 L 1340 580"/>
+        <path d="M 800 880 L 800 580"/>
+        <path d="M 380 720 L 380 880"/>
+        <path d="M 1220 720 L 1220 880"/>
+        <path d="M 540 720 L 540 580"/>
+        <path d="M 1060 720 L 1060 580"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="ball-stage" data-path="closing" aria-hidden="true"></div>
+
+  <div class="hero-numeral" aria-hidden="true">∞</div>
+
+  <div class="hero-rail" data-fade>
+    <div class="left">
+      <span class="dot" aria-hidden="true"></span>
+      <span class="ital">Begin Anywhere</span>
+      <span>· Year-Round</span>
+    </div>
+    <div class="right">
+      <span class="hero-clock-2">--:--:--</span>
+      <span class="div" aria-hidden="true"></span>
+      <span class="ital">Next Class</span>
+    </div>
+  </div>
+
+  <div class="wrap hero-content">
+    <h1 id="closing-title" data-fade style="--d:120ms">
+      <span class="kw1">공을 넘기는 일은,</span>
+      <span class="kw2">사실 <em>한계를 넘는</em></span>
+      <span class="kw3">일입니다.</span>
+    </h1>
+    <p class="sub" data-fade style="--d:300ms">
+      시드니에서, 화면 밖에서, 진짜로 살아있는 시간. WWTA에서 시작하세요.
+    </p>
+    <div class="btn-row" data-fade style="--d:420ms">
+      <a href="#book" class="btn">첫 클래스 예약하기</a>
+      <a href="#contact" class="btn btn-ghost-on-dark">문의하기</a>
+    </div>
+  </div>
+
+  <div class="hero-foot" aria-hidden="true">
+    <span class="lbl">Last Light · Centennial Park</span>
+  </div>
+</section>
+
+</main>
+
+<!-- ░░░ Footer ░░░ -->
+<footer class="site-footer" id="contact">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a href="#top" class="brand" aria-label="WWTA 홈">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="12" r="9.3"/>
+              <path d="M3.4 8.5 C 8 11, 16 11, 20.6 8.5"/>
+              <path d="M3.4 15.5 C 8 13, 16 13, 20.6 15.5"/>
+            </svg>
+          </span>
+          <span class="brand-name">WWTA</span>
+        </a>
+        <p>World Wide Tennis Academy · 시드니 전역 코트 운영 · 연중 대회.<br>화면 밖에서, 진짜로 살아있는 시간.</p>
+      </div>
+      <div class="foot-col">
+        <h4>WWTA</h4>
+        <ul>
+          <li><a href="#problem">소개</a></li>
+          <li><a href="#coaches">코치진</a></li>
+          <li><a href="#reviews">멤버 후기</a></li>
+          <li><a href="#how">시작하기</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="#instagram">인스타그램</a></li>
+          <li><a href="#contact">문의</a></li>
+          <li><a href="#location">위치</a></li>
+          <li><a href="#book">클래스 예약</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="caption">© 2026 WWTA — World Wide Tennis Academy</span>
+      <span class="caption">Sydney, Australia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Scroll fade-in
+  var els = document.querySelectorAll('[data-fade]');
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    els.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  // Count-up
+  var counters = document.querySelectorAll('[data-count]');
+  function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
+  function animateCount(el){
+    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+    var dur = 1800;
+    var start = performance.now();
+    function tick(now){
+      var p = Math.min(1, (now - start) / dur);
+      var v = Math.round(target * easeOutCubic(p));
+      el.textContent = v.toLocaleString('ko-KR');
+      if (p < 1) requestAnimationFrame(tick);
+      else el.textContent = target.toLocaleString('ko-KR');
+    }
+    requestAnimationFrame(tick);
+  }
+  if ('IntersectionObserver' in window){
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){
+          animateCount(e.target);
+          io2.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function(el){ io2.observe(el); });
+  } else {
+    counters.forEach(function(el){ el.textContent = el.getAttribute('data-count'); });
+  }
+
+  // ─── Live Sydney clock ──────────────────────────────────
+  function tickClock(){
+    var clocks = document.querySelectorAll('.hero-clock, .hero-clock-2');
+    if (!clocks.length) return;
+    var now = new Date();
+    var parts;
+    try {
+      parts = new Intl.DateTimeFormat('en-AU', {
+        timeZone: 'Australia/Sydney',
+        hour: '2-digit', minute: '2-digit', second: '2-digit',
+        hour12: false
+      }).formatToParts(now);
+    } catch(e){
+      parts = [{type:'hour',value:'00'},{type:'minute',value:'00'},{type:'second',value:'00'}];
+    }
+    var get = function(t){ for (var i=0;i<parts.length;i++){ if(parts[i].type===t) return parts[i].value; } return '00'; };
+    var hh = get('hour'), mm = get('minute'), ss = get('second');
+    if (hh === '24') hh = '00';
+    var t1 = hh + ':' + mm + ':' + ss;
+    clocks.forEach(function(el, i){
+      if (i === 1){
+        // "Next class" — show a fixed-ish upcoming slot (19:00 next, ticking down look)
+        var future = new Date(now);
+        future.setHours(19, 0, 0, 0);
+        if (future <= now) future.setDate(future.getDate() + 1);
+        var diff = Math.max(0, future - now);
+        var h = Math.floor(diff / 3.6e6);
+        var m = Math.floor((diff % 3.6e6) / 6e4);
+        var s = Math.floor((diff % 6e4) / 1000);
+        el.textContent = String(h).padStart(2,'0') + ':' + String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+      } else {
+        el.textContent = t1;
+      }
+    });
+  }
+  tickClock();
+  setInterval(tickClock, 1000);
+
+  // ─── Kinetic ball trajectory ────────────────────────────
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Tennis ball — split into 2 layers so lighting stays fixed in screen-space
+  // while the sphere body + seams rotate (physically correct).
+  // ballBase: felt sphere + seam pattern — ROTATES
+  function ballBase(uid){
+    var seed = (parseInt(uid, 10) || 0);
+    return '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+      '<defs>' +
+        // Felt base — assume light from upper-left (warm) → darker bottom-right
+        '<radialGradient id="g' + uid + '" cx="50%" cy="50%" r="50%">' +
+          '<stop offset="0%" stop-color="#D2DC4A"/>' +
+          '<stop offset="60%" stop-color="#C5D040"/>' +
+          '<stop offset="92%" stop-color="#A2B130"/>' +
+          '<stop offset="100%" stop-color="#7A871C"/>' +
+        '</radialGradient>' +
+        // Felt grain (fractal noise textured darkly)
+        '<filter id="fuzz' + uid + '" x="0%" y="0%" width="100%" height="100%">' +
+          '<feTurbulence type="fractalNoise" baseFrequency="3.4" numOctaves="2" seed="' + seed + '"/>' +
+          '<feColorMatrix values="0 0 0 0 0.13  0 0 0 0 0.16  0 0 0 0 0.04  1 0 0 0 -0.30"/>' +
+          '<feComposite in2="SourceGraphic" operator="in"/>' +
+        '</filter>' +
+      '</defs>' +
+      // Base felt sphere — uniform color (lighting comes from .ball-light layer)
+      '<circle cx="50" cy="50" r="48" fill="url(#g' + uid + ')"/>' +
+      // Felt grain overlay
+      '<circle cx="50" cy="50" r="48" fill="#9FB230" filter="url(#fuzz' + uid + ')" opacity="0.50"/>' +
+      // Dark seam shadow (3D indent feel)
+      '<path d="M 5 39 C 26 58, 74 58, 95 39" fill="none" stroke="#2A3508" stroke-width="3.4" stroke-linecap="round" opacity="0.50"/>' +
+      '<path d="M 5 61 C 26 42, 74 42, 95 61" fill="none" stroke="#2A3508" stroke-width="3.4" stroke-linecap="round" opacity="0.50"/>' +
+      // Bright seam on top
+      '<path d="M 5 38 C 26 57, 74 57, 95 38" fill="none" stroke="#FFFDE0" stroke-width="2.2" stroke-linecap="round" opacity="0.96"/>' +
+      '<path d="M 5 62 C 26 43, 74 43, 95 62" fill="none" stroke="#FFFDE0" stroke-width="2.2" stroke-linecap="round" opacity="0.96"/>' +
+    '</svg>';
+  }
+
+  // ballLight: lighting layer — DOES NOT ROTATE.
+  // Light from upper-left (the warm sun). Highlights, SSS rim, dark terminator.
+  function ballLight(uid){
+    return '<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
+      '<defs>' +
+        // Lit-side glow (warm light wash on the upper-left hemisphere)
+        '<radialGradient id="lt' + uid + '" cx="32%" cy="26%" r="62%">' +
+          '<stop offset="0%" stop-color="rgba(255,250,170,0.55)"/>' +
+          '<stop offset="42%" stop-color="rgba(255,250,170,0.12)"/>' +
+          '<stop offset="100%" stop-color="rgba(255,250,170,0)"/>' +
+        '</radialGradient>' +
+        // Shadow-side dim (cool darkening on the lower-right hemisphere)
+        '<radialGradient id="sh' + uid + '" cx="74%" cy="78%" r="68%">' +
+          '<stop offset="0%" stop-color="rgba(8,16,2,0.50)"/>' +
+          '<stop offset="55%" stop-color="rgba(8,16,2,0.18)"/>' +
+          '<stop offset="100%" stop-color="rgba(8,16,2,0)"/>' +
+        '</radialGradient>' +
+        // Rim shadow — terminator line
+        '<radialGradient id="r' + uid + '" cx="50%" cy="50%" r="50%">' +
+          '<stop offset="84%" stop-color="rgba(0,0,0,0)"/>' +
+          '<stop offset="100%" stop-color="rgba(10,16,2,0.42)"/>' +
+        '</radialGradient>' +
+        // SSS edge glow — backlit fuzz catching the sun at the rim
+        '<radialGradient id="s' + uid + '" cx="50%" cy="50%" r="50%">' +
+          '<stop offset="92%" stop-color="rgba(255,245,160,0)"/>' +
+          '<stop offset="97%" stop-color="rgba(255,245,160,0.30)"/>' +
+          '<stop offset="100%" stop-color="rgba(255,245,160,0)"/>' +
+        '</radialGradient>' +
+        // Specular highlight
+        '<radialGradient id="h' + uid + '" cx="34%" cy="26%" r="20%">' +
+          '<stop offset="0%" stop-color="rgba(255,255,255,0.72)"/>' +
+          '<stop offset="55%" stop-color="rgba(255,255,255,0.16)"/>' +
+          '<stop offset="100%" stop-color="rgba(255,255,255,0)"/>' +
+        '</radialGradient>' +
+        // Clip everything to the sphere
+        '<clipPath id="cp' + uid + '"><circle cx="50" cy="50" r="48"/></clipPath>' +
+      '</defs>' +
+      '<g clip-path="url(#cp' + uid + ')">' +
+        // Lit hemisphere (warm wash)
+        '<circle cx="50" cy="50" r="48" fill="url(#lt' + uid + ')"/>' +
+        // Shadow hemisphere
+        '<circle cx="50" cy="50" r="48" fill="url(#sh' + uid + ')"/>' +
+        // Specular hotspot
+        '<ellipse cx="32" cy="24" rx="14" ry="9" fill="url(#h' + uid + ')"/>' +
+        '<ellipse cx="35" cy="28" rx="4.5" ry="2.4" fill="#FFFFFF" opacity="0.55"/>' +
+      '</g>' +
+      // Rim shadow (lives on top, outside clip)
+      '<circle cx="50" cy="50" r="48" fill="url(#r' + uid + ')"/>' +
+      // SSS edge glow (catches light at terminator)
+      '<circle cx="50" cy="50" r="48" fill="url(#s' + uid + ')"/>' +
+    '</svg>';
+  }
+
+  // Realistic 3-bounce trajectory
+  function trajectory(t, W, H, pathKey){
+    var pk = pathKey || 'default';
+    var cfg = {
+      'default': {
+        xStart: -0.10, xEnd: 1.16, groundY: 0.82,
+        bounces: [
+          { end: 0.46, peak: 0.66 },
+          { end: 0.78, peak: 0.26 },
+          { end: 1.00, peak: 0.08 }
+        ]
+      },
+      'closing': {
+        xStart: -0.12, xEnd: 1.18, groundY: 0.78,
+        bounces: [
+          { end: 0.50, peak: 0.72 },
+          { end: 0.82, peak: 0.30 },
+          { end: 1.00, peak: 0.09 }
+        ]
+      }
+    };
+    var c = cfg[pk];
+    var xt = t < 0.92 ? t / 0.92 : 1 - (1 - t) * (1 - t) * 6;
+    xt = Math.max(0, Math.min(1, xt));
+    var x = (c.xStart + (c.xEnd - c.xStart) * xt) * W;
+    var groundY = c.groundY * H;
+    var y = groundY, heightRatio = 0;
+    var prevEnd = 0;
+    var bounceTimes = [];
+    for (var i = 0; i < c.bounces.length; i++){
+      var b = c.bounces[i];
+      bounceTimes.push(b.end);
+      if (t <= b.end){
+        var s = (t - prevEnd) / (b.end - prevEnd);
+        var arc = Math.sin(s * Math.PI);
+        y = groundY - arc * b.peak * H;
+        heightRatio = arc;
+        break;
+      }
+      prevEnd = b.end;
+    }
+    return [x, y, heightRatio, groundY, bounceTimes];
+  }
+
+  function velocityVector(t, W, H, pathKey){
+    var dt = 0.004;
+    var t1 = Math.max(0, t - dt), t2 = Math.min(1, t + dt);
+    var p1 = trajectory(t1, W, H, pathKey);
+    var p2 = trajectory(t2, W, H, pathKey);
+    return [p2[0] - p1[0], p2[1] - p1[1]];
+  }
+
+  var stages = document.querySelectorAll('.ball-stage');
+  stages.forEach(function(stage, sIdx){
+    var TRAIL = 6;
+    var pathKey = stage.dataset.path || 'default';
+
+    var shadow = document.createElement('div');
+    shadow.className = 'ball-shadow';
+    stage.appendChild(shadow);
+
+    // Bounce flash (court line that pulses on impact)
+    var flash = document.createElement('div');
+    flash.className = 'bounce-flash';
+    stage.appendChild(flash);
+
+    // Trail ghosts
+    var trails = [];
+    for (var i = TRAIL; i >= 1; i--){
+      var tEl = document.createElement('div');
+      tEl.className = 'ball ball-trail';
+      var tInner = document.createElement('div');
+      tInner.className = 'ball-inner';
+      var tSpin = document.createElement('div');
+      tSpin.className = 'ball-spin';
+      tSpin.innerHTML = ballBase(sIdx + '-t' + i);
+      var tLight = document.createElement('div');
+      tLight.className = 'ball-light';
+      tLight.innerHTML = ballLight(sIdx + '-t' + i);
+      tInner.appendChild(tSpin);
+      tInner.appendChild(tLight);
+      tEl.appendChild(tInner);
+      stage.appendChild(tEl);
+      trails.push({ el: tEl, spin: tSpin, lag: i * 0.026, idx: i });
+    }
+    // Main ball
+    var main = document.createElement('div');
+    main.className = 'ball ball-main';
+    var mainInner = document.createElement('div');
+    mainInner.className = 'ball-inner';
+    var mainSpin = document.createElement('div');
+    mainSpin.className = 'ball-spin';
+    mainSpin.innerHTML = ballBase(sIdx + '-m');
+    var mainLight = document.createElement('div');
+    mainLight.className = 'ball-light';
+    mainLight.innerHTML = ballLight(sIdx + '-m');
+    mainInner.appendChild(mainSpin);
+    mainInner.appendChild(mainLight);
+    main.appendChild(mainInner);
+    stage.appendChild(main);
+
+    var W = 0, H = 0;
+    function measure(){
+      var r = stage.getBoundingClientRect();
+      W = r.width; H = r.height;
+    }
+    measure();
+    if (window.ResizeObserver){
+      var ro = new ResizeObserver(measure);
+      ro.observe(stage);
+    } else {
+      window.addEventListener('resize', measure);
+    }
+
+    var DUR = 6800; // faster — feels tennis-paced, not beach ball
+    var t0 = performance.now();
+    var raf = null;
+    var running = false;
+    var prevT = 1;
+    var lastBouncedAt = -1;
+    var particles = []; // { el, sx, sy, vx, vy, life, born }
+
+    function spawnDust(cx, cy, intensity){
+      var n = Math.round(8 + intensity * 8);
+      for (var k = 0; k < n; k++){
+        var d = document.createElement('div');
+        d.className = 'dust';
+        stage.appendChild(d);
+        var angle = -Math.PI + Math.random() * Math.PI; // upper hemisphere
+        var speed = (50 + Math.random() * 110) * (0.7 + intensity * 0.6); // px/sec
+        var size = 7 + Math.random() * 9;
+        d.style.width = size + 'px';
+        d.style.height = size + 'px';
+        particles.push({
+          el: d,
+          x: cx, y: cy,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed - 30, // extra upward kick
+          gravity: 220, // px/sec²
+          life: 700 + Math.random() * 500,
+          born: performance.now(),
+          startSize: size
+        });
+      }
+    }
+
+    function flashBounce(cx, cy, intensity){
+      flash.style.transform = 'translate(' + cx + 'px,' + cy + 'px) translate(-50%,-50%) scaleX(' + (0.6 + intensity * 0.8) + ')';
+      flash.style.opacity = '0';
+      // force reflow then animate
+      void flash.offsetWidth;
+      flash.style.transition = 'opacity 80ms ease-out';
+      flash.style.opacity = (0.5 + intensity * 0.5);
+      setTimeout(function(){
+        flash.style.transition = 'opacity 420ms ease-out';
+        flash.style.opacity = '0';
+      }, 80);
+    }
+
+    function updateParticles(now){
+      var alive = [];
+      for (var i = 0; i < particles.length; i++){
+        var p = particles[i];
+        var age = (now - p.born) / 1000; // seconds
+        if ((now - p.born) > p.life){
+          if (p.el && p.el.parentNode) p.el.parentNode.removeChild(p.el);
+          continue;
+        }
+        var ageMs = now - p.born;
+        var lifeRatio = ageMs / p.life;
+        var x = p.x + p.vx * age;
+        var y = p.y + p.vy * age + 0.5 * p.gravity * age * age;
+        var scale = 1 + lifeRatio * 1.8;
+        var opacity = 1 - lifeRatio;
+        p.el.style.transform = 'translate(' + x + 'px,' + y + 'px) translate(-50%,-50%) scale(' + scale + ')';
+        p.el.style.opacity = opacity;
+        alive.push(p);
+      }
+      particles = alive;
+    }
+
+    function frame(now){
+      var t = ((now - t0) % DUR) / DUR;
+
+      // Detect bounce — t crossed a bounceTime boundary going forward
+      var info = trajectory(t, W, H, pathKey);
+      var x = info[0], y = info[1], heightRatio = info[2], groundY = info[3], bounceTimes = info[4];
+
+      // Bounce detection: when t crosses any bounceTime endpoint
+      for (var bi = 0; bi < bounceTimes.length - 1; bi++){
+        var bt = bounceTimes[bi];
+        if (prevT < bt && t >= bt && t < bt + 0.05){
+          // bounce!
+          if (lastBouncedAt !== Math.floor(now / DUR) * 10 + bi){
+            lastBouncedAt = Math.floor(now / DUR) * 10 + bi;
+            var bp = trajectory(bt, W, H, pathKey);
+            var intensity = bi === 0 ? 1.0 : (bi === 1 ? 0.55 : 0.25);
+            spawnDust(bp[0], groundY + 4, intensity);
+            flashBounce(bp[0], groundY + 6, intensity);
+          }
+        }
+      }
+      // Also handle loop wrap (t reset to 0)
+      if (t < prevT) lastBouncedAt = -1;
+      prevT = t;
+
+      // Velocity vector for subtle stretch + spin direction
+      var v = velocityVector(t, W, H, pathKey);
+      var speed = Math.hypot(v[0], v[1]);
+      var refSpeed = W * 0.0030;
+      var stretchFactor = Math.min(1, speed / refSpeed);
+
+      // Depth scale — bigger near ground (perspective)
+      var depthScale = 0.82 + 0.30 * (1 - heightRatio);
+
+      // GENTLE stretch — keeps ball round, just hints at motion (no rugby ball)
+      var stretchX = 1 + stretchFactor * 0.10;
+      var stretchY = 1 - stretchFactor * 0.05;
+
+      // Bounce squash — minor, only at ground when slow
+      var bounceSquash = 1, bounceSquashY = 1;
+      if (heightRatio < 0.03 && stretchFactor < 0.55){
+        var sq = (0.03 - heightRatio) / 0.03;
+        bounceSquash = 1 + sq * 0.08;
+        bounceSquashY = 1 - sq * 0.10;
+      }
+
+      var finalScaleX = depthScale * stretchX * bounceSquash;
+      var finalScaleY = depthScale * stretchY * bounceSquashY;
+
+      // Spin rate proportional to actual speed (slows at apex, fastest mid-flight)
+      var spin = now * 0.18 + stretchFactor * now * 0.22;
+
+      // Motion-align angle (kept small — only used by spin, not by outer stretch)
+      // Outer ball: position + minimal motion-align rotate so squash is along motion
+      var motionAngle = Math.atan2(v[1], v[0]) * 180 / Math.PI;
+      main.style.transform =
+        'translate(' + x + 'px,' + y + 'px) translate(-50%,-50%) ' +
+        'rotate(' + motionAngle + 'deg) ' +
+        'scale(' + finalScaleX + ',' + finalScaleY + ')';
+      main.style.opacity = '1';
+
+      // Spin layer: counter motion-angle so rotation looks like screen-Z spin
+      // (the seam pattern rotates relative to the ball body)
+      mainSpin.style.transform = 'rotate(' + (spin - motionAngle) + 'deg)';
+
+      // Light layer: counter motion-angle so the highlight stays fixed in screen space
+      // (light keeps coming from upper-left regardless of how the ball is moving)
+      mainLight.style.transform = 'rotate(' + (-motionAngle) + 'deg)';
+
+      // Shadow on ground
+      var floorY = groundY;
+      var heightAbove = (1 - heightRatio);
+      var shadowScaleX = 0.45 + 0.95 * heightAbove;
+      var shadowScaleY = 0.30 + 0.55 * heightAbove;
+      var shadowOpacity = 0.10 + 0.55 * heightAbove;
+      shadow.style.transform =
+        'translate(' + x + 'px,' + floorY + 'px) translate(-50%,-50%) scale(' + shadowScaleX + ',' + shadowScaleY + ')';
+      shadow.style.opacity = shadowOpacity;
+
+      // Trails — gentle stretch, motion-aligned with proper light counter-rotation
+      trails.forEach(function(tr, i){
+        var tt = t - tr.lag;
+        if (tt < 0) tt += 1;
+        var tp = trajectory(tt, W, H, pathKey);
+        var thR = tp[2];
+        var tv = velocityVector(tt, W, H, pathKey);
+        var ts = Math.hypot(tv[0], tv[1]);
+        var tsf = Math.min(1, ts / refSpeed);
+        var tAngle = Math.atan2(tv[1], tv[0]) * 180 / Math.PI;
+        var tDepth = 0.82 + 0.30 * (1 - thR);
+        var tSX = tDepth * (1 + tsf * 0.10) * (1 - i * 0.06);
+        var tSY = tDepth * (1 - tsf * 0.05) * (1 - i * 0.06);
+        var op = 0.34 - i * 0.050;
+        tr.el.style.transform =
+          'translate(' + tp[0] + 'px,' + tp[1] + 'px) translate(-50%,-50%) ' +
+          'rotate(' + tAngle + 'deg) ' +
+          'scale(' + tSX + ',' + tSY + ')';
+        tr.spin.style.transform = 'rotate(' + (spin - tAngle - (i + 1) * 22) + 'deg)';
+        tr.el.style.opacity = Math.max(0, op);
+      });
+
+      updateParticles(now);
+
+      raf = requestAnimationFrame(frame);
+    }
+
+    function start(){ if (!running){ running = true; t0 = performance.now(); prevT = 1; raf = requestAnimationFrame(frame); } }
+    function stop(){ if (running){ running = false; cancelAnimationFrame(raf); raf = null; } }
+
+    if (reduced){
+      var pp = trajectory(0.25, W, H, pathKey);
+      main.style.transform = 'translate(' + pp[0] + 'px,' + pp[1] + 'px) translate(-50%,-50%) scale(1.05)';
+      main.style.opacity = '1';
+      trails.forEach(function(tr){ tr.el.style.opacity = '0'; });
+      shadow.style.opacity = '0';
+      return;
+    }
+
+    if ('IntersectionObserver' in window){
+      var vio = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting) start(); else stop();
+        });
+      }, { threshold: 0 });
+      vio.observe(stage);
+    }
+    // Always start once — IO only used to pause/resume when offscreen
+    start();
+  });
+
+  // ─── Subtle hero parallax on scroll ─────────────────────
+  if (!reduced){
+    var heroSections = document.querySelectorAll('.hero-kinetic');
+    var tickP = false;
+    function applyParallax(){
+      heroSections.forEach(function(sec){
+        var r = sec.getBoundingClientRect();
+        // progress: 0 when section top hits viewport top, increases as we scroll past
+        var progress = -r.top; // pixels scrolled past the top of this section
+        if (progress < -r.height || progress > r.height) return; // far from view
+        var content = sec.querySelector('.hero-content');
+        var stageEl = sec.querySelector('.ball-stage');
+        if (content) content.style.transform = 'translate3d(0,' + (progress * -0.10) + 'px,0)';
+        if (stageEl) stageEl.style.transform = 'translate3d(0,' + (progress * -0.18) + 'px,0)';
+      });
+      tickP = false;
+    }
+    window.addEventListener('scroll', function(){
+      if (!tickP){ tickP = true; requestAnimationFrame(applyParallax); }
+    }, { passive: true });
+    applyParallax();
+  }
+})();
+</script>
+
+</body>
+</html>
