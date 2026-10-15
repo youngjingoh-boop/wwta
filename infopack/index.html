@@ -236,7 +236,7 @@ img{display:block;max-width:100%}
   body{padding:28px 0}
   .page{margin:0 auto 28px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
 }
-@media print{ body{background:none} }
+@media print{ body{background:none} *,*::before,*::after{text-shadow:none!important} .cl,.baseline,.net,.page{box-shadow:none!important} }
 @page{size:210mm 297mm;margin:0}
 
 /* ── Phones: reflow into a readable single column ───────── */
