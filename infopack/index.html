@@ -10,7 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Worldwide Tennis Academy">
 <meta property="og:title" content="WWTA · Play with us">
-<meta property="og:description" content="Sydney's tennis community since 2010. Start with a $29 group or $89 private trial, with courts from Granville to Killara.">
+<meta property="og:description" content="Sydney's tennis community since 2010. Start with a $29 group or $89 private trial, at six venues from Granville to Killara.">
 <meta property="og:url" content="https://www.scalemaster.com.au/wwta">
 <meta property="og:image" content="https://www.scalemaster.com.au/wwta/assets/og-wwta.jpg">
 <meta property="og:image:width" content="1200">
@@ -154,38 +154,40 @@ img{display:block;max-width:100%}
 .partners{position:absolute;left:16mm;right:16mm;bottom:11.5mm;display:flex;gap:4mm;align-items:baseline;color:var(--mute-d);border-top:.25mm solid var(--rule-d);padding-top:3mm}
 .partners span{font-size:8pt}
 
-/* ══ P4 · 40 · Our venues (true-scale court) ══════════════ */
+/* ══ P4 · 40 · Our venues — the whole court, to scale ════════
+   12 mm per metre: doubles 131.64 wide (x 39.18–170.82), singles 98.76 (x 55.62–154.38),
+   baselines y 5.88 / 291.12, service lines y 71.70 / 225.30, net y 148.50.
+   Six zones = two back courts + four service boxes = six venues. */
 .court-pg{background:var(--surround)}
-.court-pg .surface{position:absolute;top:0;bottom:0;left:8mm;right:8mm;background:var(--court)}
+.court-pg .surface{position:absolute;top:5.88mm;bottom:5.88mm;left:39.18mm;right:39.18mm;background:var(--court)}
 .court-pg .surface::after{content:"";position:absolute;inset:0;opacity:.18;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
-.cl{position:absolute;background:var(--line);box-shadow:0 0 1.6mm rgba(255,255,255,.22)}
-.cl.v{width:.9mm}
-.cl.h{height:.9mm}
-.net{position:absolute;left:0;right:0;top:calc(165.18mm - 2.1mm);height:4.2mm;z-index:3;
+.cl{position:absolute;background:var(--line);box-shadow:0 0 1.2mm rgba(255,255,255,.22);z-index:1}
+.cl.v{width:.7mm}.cl.h{height:.7mm}
+.net{position:absolute;left:28.2mm;right:28.2mm;top:142mm;height:13mm;z-index:4;display:flex;align-items:center;justify-content:center;
   background:
-    linear-gradient(var(--line),var(--line)) 0 0/100% 1mm no-repeat,
-    repeating-linear-gradient(90deg,rgba(10,20,15,.95) 0 .35mm,transparent .35mm 1.5mm),
-    repeating-linear-gradient(0deg,rgba(10,20,15,.95) 0 .35mm,transparent .35mm 1.5mm),
-    rgba(10,22,16,.55);
-  box-shadow:0 .8mm 1.6mm rgba(0,0,0,.35)}
+    linear-gradient(var(--line),var(--line)) 0 0/100% 1.1mm no-repeat,
+    repeating-linear-gradient(90deg,rgba(242,245,236,.13) 0 .3mm,transparent .3mm 1.6mm),
+    repeating-linear-gradient(0deg,rgba(242,245,236,.13) 0 .3mm,transparent .3mm 1.6mm),
+    #0a1a12;
+  box-shadow:0 1mm 2.4mm rgba(0,0,0,.45)}
+.net::before,.net::after{content:"";position:absolute;top:50%;width:2.8mm;height:2.8mm;margin-top:-1.4mm;border-radius:50%;background:#0a1a12;box-shadow:0 0 0 .5mm var(--line)}
+.net::before{left:-1.4mm}.net::after{right:-1.4mm}
+.net h2{font-size:15.5pt;color:#fff;letter-spacing:.01em;padding-top:.6mm}
 .box{position:absolute;overflow:hidden;z-index:2;background:var(--night)}
 .box img{width:100%;height:100%;object-fit:cover}
-.box::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,16,11,0) 58%,rgba(6,16,11,.82) 100%)}
-.box figcaption{position:absolute;left:4mm;right:4mm;bottom:3.6mm;z-index:1}
-.box figcaption b{display:block;font-family:var(--fx);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:10.5pt;line-height:1;color:#fff;letter-spacing:-.005em}
-.box figcaption span{display:block;font-size:7.6pt;color:rgba(255,255,255,.82);margin-top:1.4mm}
-.box-tl{left:34.83mm;top:54.6mm;width:67.57mm;height:106.98mm}
-.box-tr{left:107.6mm;top:54.6mm;width:67.57mm;height:106.98mm}
-.box-bl{left:34.83mm;top:168.78mm;width:67.57mm;height:106.98mm}
-.box-br{left:107.6mm;top:168.78mm;width:67.57mm;height:106.98mm}
-.alley{position:absolute;top:52mm;height:226.36mm;width:24.23mm;display:flex;align-items:center;justify-content:center;z-index:2}
-.alley .c{writing-mode:vertical-rl;transform:rotate(180deg);color:rgba(242,245,236,.6);letter-spacing:.32em;font-size:6.9pt;white-space:nowrap}
-.alley-l{left:8mm}.alley-r{right:8mm}
-.p4-head{position:absolute;top:12mm;left:36.2mm;right:36.2mm;z-index:2}
-.p4-head .eyebrow{color:var(--mute-d)}
-.p4-head h2{font-size:25pt;color:#fff;margin-top:4.6mm;line-height:.9}
-.p4-areas{margin-top:3.4mm;color:var(--ball)}
-.p4-foot{position:absolute;bottom:5.4mm;left:36.2mm;right:36.2mm;text-align:center;z-index:2;color:rgba(242,245,236,.72);font-size:6.8pt}
+.box::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,16,11,0) 62%,rgba(6,16,11,.8) 100%)}
+.box figcaption{position:absolute;left:2.8mm;right:2.8mm;bottom:2.6mm;z-index:1;font-family:var(--fx);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:8.6pt;line-height:1;color:#fff;letter-spacing:.005em}
+.box-top{left:57.5mm;top:7.8mm;width:95mm;height:62mm}
+.box-tl{left:57.5mm;top:73.6mm;width:45.6mm;height:66.8mm}
+.box-tr{left:106.9mm;top:73.6mm;width:45.6mm;height:66.8mm}
+.box-bl{left:57.5mm;top:156.6mm;width:45.6mm;height:66.8mm}
+.box-br{left:106.9mm;top:156.6mm;width:45.6mm;height:66.8mm}
+.box-bot{left:57.5mm;top:227.2mm;width:95mm;height:62mm}
+.p4-tl{position:absolute;top:11mm;left:8mm;z-index:3;color:var(--mute-d)}
+.p4-tl b{color:var(--line)}
+.p4-tr{position:absolute;top:10mm;right:8mm;z-index:3}
+.p4-bl{position:absolute;bottom:8mm;left:8mm;width:28mm;z-index:3;color:var(--mute-d);font-size:6.6pt;line-height:1.5}
+.p4-br{position:absolute;bottom:8mm;right:8mm;width:28mm;text-align:right;z-index:3;color:var(--mute-d);font-size:6.6pt;line-height:1.5}
 
 /* ══ P5 · GAME · Start here ═══════════════════════════════ */
 .offers{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:6mm}
@@ -241,7 +243,7 @@ img{display:block;max-width:100%}
 @media screen and (max-width:760px){
   body{padding:0;font-size:15px}
   .page{width:100%;height:auto;margin:0;box-shadow:none;overflow:visible}
-  .pad,.p1-top,.p1-title,.p1-body,.partners,.know,.p4-head,.p4-foot,.alley,.box,.net{position:static}
+  .pad,.p1-top,.p1-title,.p1-body,.partners,.know{position:static}
   .pad{padding:28px 20px}
   .p1{display:flex;flex-direction:column}
   .p1-hero{position:relative;height:118vw;order:0}
@@ -263,18 +265,19 @@ img{display:block;max-width:100%}
   .p3-photo{margin:24px -20px 0;height:62vw}
   .partners,.know{margin-top:28px;flex-wrap:wrap}
   .know{grid-template-columns:1fr 1fr;display:grid}
-  .court-pg{padding:28px 20px 34px}
+  .court-pg{display:flex;flex-direction:column;padding:26px 20px 30px}
   .court-pg .surface,.cl{display:none}
-  .court-pg .p4-head h2{font-size:9vw}
-  .court-pg .grid4{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--line);border:3px solid var(--line);margin-top:22px}
-  .box,.box-tl,.box-tr,.box-bl,.box-br{position:relative;width:auto;height:62vw;left:auto;top:auto;min-width:0}
-  .box figcaption{left:10px;right:10px;bottom:10px}
-  .box figcaption span{font-size:11px}
-  .partners,.know{margin:0;padding:18px 20px 28px}
-  .box figcaption{position:absolute}
-  .net{display:none}
-  .alley{display:none}
-  .p4-foot{margin-top:18px;font-size:12px}
+  .p4-tl,.p4-tr,.p4-bl,.p4-br,.net{position:static;width:auto}
+  .p4-tr{display:none}
+  .net{order:1;background:none;box-shadow:none;justify-content:flex-start;height:auto;margin:14px 0 18px}
+  .net::before,.net::after{display:none}
+  .net h2{font-size:9.5vw;line-height:.9}
+  .grid6{order:2;display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--line);border:3px solid var(--line)}
+  .box{position:relative;left:auto;top:auto;width:auto;height:62vw;min-width:0}
+  .box-top,.box-bot{grid-column:1/-1;height:56vw}
+  .box figcaption{font-size:14px;left:10px;bottom:10px}
+  .p4-bl{order:3;margin-top:16px;font-size:12px}
+  .p4-br{display:none}
   .prog .ph,.camp{height:52vw}
   .c{font-size:11px}
 }
@@ -298,7 +301,7 @@ img{display:block;max-width:100%}
     <div class="p1-cols">
       <div class="who">
         <p class="c">Who we are</p>
-        <p>Worldwide Tennis Academy has coached across Sydney since 2010. Every session is built on scientifically proven technique and tactics — and on the simple belief that tennis should be enjoyed. Today that's more than 2,300 members, a ten-strong team and courts from Granville to Killara, where first-timers, families, social players and future pros share the game.</p>
+        <p>Worldwide Tennis Academy has coached across Sydney since 2010. Every session is built on scientifically proven technique and tactics — and on the simple belief that tennis should be enjoyed. Today that's more than 2,300 members, a ten-strong team and six venues from Granville to Killara, where first-timers, families, social players and future pros share the game.</p>
       </div>
       <div class="mission">
         <p class="c">Our mission</p>
@@ -309,7 +312,7 @@ img{display:block;max-width:100%}
     <dl class="scoreboard">
       <div><dt class="c">Since</dt><dd class="x num">2010</dd></div>
       <div><dt class="c">Members</dt><dd class="x num">2,300+</dd></div>
-      <div><dt class="c">Coaches &amp; staff</dt><dd class="x num">10</dd></div>
+      <div><dt class="c">Venues</dt><dd class="x num">6</dd></div>
       <div><dt class="c">Trial from</dt><dd class="x num">$29</dd></div>
     </dl>
   </div>
@@ -423,38 +426,35 @@ img{display:block;max-width:100%}
   <div class="partners"><span class="c">Partners</span><span>Tennis Australia · Universal Tennis (UTR) · Babolat · Head · Tecnifibre · Tennis Like</span></div>
 </section>
 
-<!-- ═══════════════ 40 · Our venues — drawn to scale ═══════════════ -->
-<!-- Court geometry (mm, scale 17.68 mm per metre): doubles sidelines x=8/202, singles x=32.23/177.77,
-     centre service line x=105, service lines y=52/278.36, net y=165.18. Baselines fall off the page. -->
+<!-- ═══════════════ 40 · Our venues — the whole court ═══════════════ -->
 <section class="page dark court-pg" aria-label="Our venues">
   <div class="surface" aria-hidden="true"></div>
   <div aria-hidden="true">
-    <div class="cl v" style="left:7.55mm;top:0;bottom:0"></div>
-    <div class="cl v" style="left:31.78mm;top:0;bottom:0"></div>
-    <div class="cl v" style="left:177.32mm;top:0;bottom:0"></div>
-    <div class="cl v" style="left:201.55mm;top:0;bottom:0"></div>
-    <div class="cl v" style="left:104.55mm;top:52mm;height:226.36mm"></div>
-    <div class="cl h" style="top:51.55mm;left:32.23mm;width:145.54mm"></div>
-    <div class="cl h" style="top:277.91mm;left:32.23mm;width:145.54mm"></div>
+    <div class="cl h" style="top:5.53mm;left:39.18mm;width:131.64mm"></div>
+    <div class="cl h" style="top:71.35mm;left:55.62mm;width:98.76mm"></div>
+    <div class="cl h" style="top:224.95mm;left:55.62mm;width:98.76mm"></div>
+    <div class="cl h" style="top:290.77mm;left:39.18mm;width:131.64mm"></div>
+    <div class="cl v" style="left:38.83mm;top:5.88mm;height:285.24mm"></div>
+    <div class="cl v" style="left:55.27mm;top:5.88mm;height:285.24mm"></div>
+    <div class="cl v" style="left:154.03mm;top:5.88mm;height:285.24mm"></div>
+    <div class="cl v" style="left:170.47mm;top:5.88mm;height:285.24mm"></div>
+    <div class="cl v" style="left:104.65mm;top:71.70mm;height:153.60mm"></div>
+    <div class="cl v" style="left:104.65mm;top:5.88mm;height:2.4mm"></div>
+    <div class="cl v" style="left:104.65mm;top:288.72mm;height:2.4mm"></div>
   </div>
-  <div class="net" aria-hidden="true"></div>
-
-  <div class="p4-head">
-    <div class="head">
-      <p class="eyebrow c"><b>40</b><i></i>Our venues</p>
-      <div class="bug" aria-label="Page 4 of 5"><span class="club c">WWTA</span><span class="score">40</span></div>
-    </div>
-    <h2 class="x">Find your<br>home court.</h2>
-    <p class="c p4-areas">Auburn · Burwood · Granville · North Ryde · Killara · Chatswood area</p>
+  <p class="c p4-tl"><b>40</b> · Our venues</p>
+  <div class="bug p4-tr" aria-label="Page 4 of 5"><span class="club c">WWTA</span><span class="score">40</span></div>
+  <div class="net"><h2 class="x">Find your home court.</h2></div>
+  <div class="grid6">
+    <figure class="box box-top"><img src="assets/court-auburn-wide.jpg" alt="Auburn at dusk, several courts in play under floodlights"><figcaption>Auburn</figcaption></figure>
+    <figure class="box box-tl"><img src="assets/court-burwood.jpg" alt="Burwood during a junior squad session"><figcaption>Burwood</figcaption></figure>
+    <figure class="box box-tr"><img src="assets/court-granville.jpg" alt="Granville during a social doubles night"><figcaption>Granville</figcaption></figure>
+    <figure class="box box-bl"><img src="assets/court-killara.jpg" alt="Killara, a leafy club with a lit clubhouse verandah"><figcaption>Killara</figcaption></figure>
+    <figure class="box box-br"><img src="assets/court-chatswood.jpg" alt="Chatswood area courts with the skyline beyond the trees"><figcaption>Chatswood</figcaption></figure>
+    <figure class="box box-bot"><img src="assets/court-northryde-wide.jpg" alt="North Ryde under tall floodlights during a group drill"><figcaption>North Ryde</figcaption></figure>
   </div>
-
-  <div class="grid4">
-    <figure class="box box-tl"><img src="assets/court-auburn.jpg" alt="Auburn Tennis Club at dusk, several courts in play"><figcaption><b>Auburn</b></figcaption></figure>
-    <figure class="box box-tr"><img src="assets/court-northryde.jpg" alt="North Ryde court under tall floodlights during a group drill"><figcaption><b>North Ryde</b></figcaption></figure>
-    <figure class="box box-bl"><img src="assets/court-burwood.jpg" alt="Burwood Tennis Park during a junior squad session"><figcaption><b>Burwood</b></figcaption></figure>
-    <figure class="box box-br"><img src="assets/court-granville.jpg" alt="Granville Tennis Courts during a social doubles night"><figcaption><b>Granville</b></figcaption></figure>
-  </div>
-  <p class="p4-foot c">Ask us for session times at the court nearest you</p>
+  <p class="c p4-bl">Ask us for session times at the court nearest you</p>
+  <p class="c p4-br">Six venues<br>Granville to Killara</p>
 </section>
 
 <!-- ═══════════════ GAME · Start here ═══════════════ -->
