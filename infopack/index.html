@@ -1,328 +1,522 @@
 <!doctype html>
-<html lang="en">
+<html lang="en-AU">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>WWTA — Information Pack</title>
-<meta name="description" content="Worldwide Tennis Academy — Sydney's tennis community since 2010. Coaching for social players, juniors and elite athletes across four locations.">
+<title>WWTA Information Pack</title>
+<meta name="description" content="Worldwide Tennis Academy — Sydney's tennis community since 2010. Lessons for adults and kids across Auburn, Burwood, North Ryde and Granville. Start with a $40 group or $89 private trial.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0f2c1f">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Worldwide Tennis Academy">
+<meta property="og:title" content="WWTA · Play with us">
+<meta property="og:description" content="Sydney's tennis community since 2010. Start with a $40 group or $89 private trial at Auburn, Burwood, North Ryde or Granville.">
+<meta property="og:url" content="https://www.scalemaster.com.au/wwta">
+<meta property="og:image" content="https://www.scalemaster.com.au/wwta/assets/og-wwta.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/logo-dark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Manrope:wght@400..800&display=swap">
 <style>
+/* ── Tokens: "Under the lights" ───────────────────────────── */
 :root{
-  --court-900:#0f2c1f; --court-800:#17402d; --court-700:#1d5338;
-  --lime:#c4d92e; --lime-600:#a7bc18; --on-lime:#15191b;
-  --sky:#1e9bd7;
-  --paper:#f7f8f3; --paper-2:#eef1ea;
-  --ink:#15191b; --ink-700:#3a4247; --ink-500:#6b7379;
-  --on-dark:#eef1ea; --on-dark-dim:#a9b3ac; --hair:rgba(255,255,255,.14);
-  --fd:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --night:#0f2c1f;      /* blue-hour court green (brand court-900) */
+  --night-2:#173f2d;
+  --court:#1c5236;      /* playing surface */
+  --surround:#143d29;
+  --line:#f2f5ec;       /* painted court-line white */
+  --ball:#c4d92e;       /* tennis-ball lime (brand) — used sparingly */
+  --paper:#f4f6f0;
+  --ink:#121815;
+  --ink-2:#3b4540;
+  --mute-d:rgba(242,245,236,.66);
+  --rule-d:rgba(242,245,236,.16);
+  --rule-l:rgba(18,24,21,.14);
+  --fx:"Archivo","Arial Narrow",system-ui,sans-serif;
   --fb:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
-body{background:#2a2f2c;font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-h1,h2,h3,h4{font-family:var(--fd);margin:0;line-height:.98;letter-spacing:-.02em}
-p{margin:0}
-.wm{font-family:var(--fd);font-weight:800;letter-spacing:.18em;text-transform:uppercase}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{background:#1b1f1d;font-family:var(--fb);color:var(--ink);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-size:9.5pt;line-height:1.5}
+img{display:block;max-width:100%}
 
-/* ---- Page frame (A4) ---- */
-.page{
-  position:relative;width:210mm;height:297mm;margin:0 auto;background:var(--paper);
-  overflow:hidden;page-break-after:always;break-after:page;display:flex;flex-direction:column;
+/* type roles */
+.x{font-family:var(--fx);font-stretch:125%;font-weight:800;text-transform:uppercase;letter-spacing:-.012em;line-height:.88}
+.c{font-family:var(--fx);font-stretch:68%;font-weight:650;text-transform:uppercase;letter-spacing:.14em;font-size:7.4pt;line-height:1.35}
+.num{font-variant-numeric:tabular-nums lining-nums}
+
+/* ── Sheet ─────────────────────────────────────────────── */
+.page{position:relative;width:210mm;height:297mm;overflow:hidden;margin:0 auto;break-after:page;page-break-after:always}
+.page:last-child{break-after:auto;page-break-after:auto}
+.dark{background:var(--night);color:var(--line)}
+.light{background:var(--paper);color:var(--ink)}
+.pad{position:absolute;inset:13mm 16mm 12mm}
+.head{display:flex;justify-content:space-between;align-items:center}
+.eyebrow{display:flex;align-items:center;gap:2.6mm;color:var(--ink-2)}
+.dark .eyebrow{color:var(--mute-d)}
+.eyebrow b{font-weight:800;color:var(--ink)}
+.dark .eyebrow b{color:var(--line)}
+.eyebrow i{width:7mm;height:.5mm;background:currentColor;opacity:.6}
+
+/* score bug — page number as a tennis score */
+.bug{display:inline-flex;align-items:stretch;height:6mm;border-radius:1mm;overflow:hidden;box-shadow:0 0 0 .25mm var(--rule-l)}
+.dark .bug{box-shadow:0 0 0 .25mm var(--rule-d)}
+.bug span{display:flex;align-items:center}
+.bug .club{padding:0 2.2mm;background:var(--night);color:var(--line);gap:1.6mm}
+.bug .club::after{content:"";width:1.5mm;height:1.5mm;border-radius:50%;background:var(--ball)}
+.bug .score{padding:0 2.4mm;background:var(--ball);color:var(--ink);font-family:var(--fx);font-stretch:125%;font-weight:850;font-size:8.2pt;letter-spacing:.02em}
+
+/* ══ P1 · LOVE · Who we are ═══════════════════════════════ */
+.p1-hero{position:absolute;inset:0 0 auto 0;height:226mm}
+.p1-hero img{width:100%;height:100%;object-fit:cover;object-position:50% 24%}
+.p1-hero::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(8,20,40,.38) 0%,rgba(8,20,40,0) 16%),
+  linear-gradient(180deg,rgba(15,44,31,0) 47%,rgba(15,44,31,.82) 75%,var(--night) 91%)}
+.p1-top{position:absolute;top:12mm;left:16mm;right:16mm;display:flex;justify-content:space-between;align-items:center;z-index:2}
+.brand{display:flex;align-items:center;gap:3mm}
+.brand img{height:10.5mm;width:auto}
+.brand .c{color:var(--line);font-size:7.6pt;letter-spacing:.2em;line-height:1.25}
+.p1-title{position:absolute;top:31mm;left:0;right:0;text-align:center;z-index:2}
+.p1-title h1{font-size:70pt;color:#fff;text-shadow:0 1.2mm 8mm rgba(5,14,30,.45)}
+.p1-title p{margin-top:5mm;font-size:12.5pt;font-weight:600;color:#fff;letter-spacing:.01em;text-shadow:0 .4mm 3mm rgba(5,14,30,.6)}
+.p1-body{position:absolute;left:16mm;right:16mm;bottom:13mm;z-index:2}
+.p1-cols{display:grid;grid-template-columns:1.18fr 1fr;gap:10mm;align-items:start}
+.p1-cols .c{color:var(--ball);margin-bottom:2.6mm}
+.who p{font-size:10pt;line-height:1.58;color:rgba(242,245,236,.86)}
+.mission blockquote{font-family:var(--fx);font-stretch:100%;font-weight:600;font-size:12.6pt;line-height:1.3;letter-spacing:-.005em;color:#fff}
+.baseline{height:.7mm;background:var(--line);margin:7.5mm 0 0;box-shadow:0 0 2.4mm rgba(255,255,255,.35)}
+.scoreboard{display:grid;grid-template-columns:repeat(4,1fr)}
+.scoreboard div{padding:4.2mm 0 0 4mm;border-left:.25mm solid var(--rule-d)}
+.scoreboard div:first-child{padding-left:0;border-left:0}
+.scoreboard dt{color:var(--mute-d)}
+.scoreboard dd{font-size:24pt;margin-top:1.6mm;color:#fff}
+
+/* ══ P2 · 15 · What we offer ══════════════════════════════ */
+.h2{font-size:40pt;margin-top:7mm}
+.lead{font-size:11pt;line-height:1.5;margin-top:4mm;max-width:132mm;color:var(--ink-2);font-weight:500}
+.dark .lead{color:rgba(242,245,236,.8)}
+.lessons{margin-top:8.5mm;background:var(--night);color:var(--line);border-radius:1.6mm;padding:6.4mm 7mm 5.6mm}
+.lessons-top{display:flex;justify-content:space-between;align-items:baseline;gap:6mm}
+.lessons-top h3{font-size:15pt}
+.lessons-top .c{color:var(--ball)}
+.lessons p.d{margin-top:2.4mm;font-size:9.4pt;color:rgba(242,245,236,.8);max-width:150mm}
+.formats{display:grid;grid-template-columns:repeat(5,1fr);gap:3.6mm;margin-top:5mm}
+.fmt svg{width:100%;height:auto;display:block}
+.fmt .c{margin-top:2mm;color:var(--line)}
+.fmt .p{font-family:var(--fx);font-stretch:125%;font-weight:800;font-size:14pt;color:var(--ball);margin-top:.8mm;line-height:1}
+.fmt .p small{font-family:var(--fb);font-weight:600;font-size:7pt;color:var(--mute-d);letter-spacing:0;margin-left:.6mm}
+.fmt .s{font-size:7pt;color:var(--mute-d);margin-top:.6mm;line-height:1.3}
+.fnote{margin-top:4.2mm;padding-top:3mm;border-top:.25mm solid var(--rule-d);font-size:7.6pt;color:var(--mute-d)}
+.programs{display:grid;grid-template-columns:repeat(3,1fr);gap:6mm;margin-top:9mm}
+.prog .ph{height:50mm;border-radius:1.4mm;overflow:hidden;background:var(--night)}
+.prog .ph img{width:100%;height:100%;object-fit:cover}
+.prog h4{font-size:10.4pt;margin-top:3.6mm;white-space:nowrap}
+.prog p{font-size:8.6pt;line-height:1.48;margin-top:1.8mm;color:var(--ink-2)}
+.prog .c{margin-top:2.2mm;color:var(--ink);font-size:6.9pt}
+.camp{height:50mm;border-radius:1.4mm;background:var(--court);color:var(--line);position:relative;overflow:hidden;padding:4.4mm 5mm;display:flex;flex-direction:column;justify-content:space-between}
+.camp::before{content:"";position:absolute;inset:0;background:
+  linear-gradient(var(--line),var(--line)) 0 62%/100% .5mm no-repeat,
+  linear-gradient(var(--line),var(--line)) 58% 0/.5mm 62% no-repeat;opacity:.38}
+.camp .c{position:relative;color:var(--mute-d)}
+.camp .age{position:relative;font-family:var(--fx);font-stretch:125%;font-weight:850;font-size:40pt;line-height:.85;color:var(--ball)}
+.also{display:grid;grid-template-columns:auto 1fr 1fr 1fr 1fr;gap:0;margin-top:9mm;border-top:.25mm solid var(--rule-l);border-bottom:.25mm solid var(--rule-l)}
+.also > *{padding:3.4mm 3.6mm}
+.also > :first-child{padding-left:0;display:flex;align-items:center}
+.also div + div{border-left:.25mm solid var(--rule-l)}
+.also b{display:block;font-family:var(--fx);font-stretch:100%;font-weight:700;font-size:8.4pt;letter-spacing:.01em}
+.also span{display:block;font-size:7.6pt;color:var(--ink-2);margin-top:.6mm;line-height:1.35}
+.place{margin-top:4.4mm;font-size:9pt;color:var(--ink-2)}
+.place b{color:var(--ink)}
+
+/* ══ P3 · 30 · Why WWTA ═══════════════════════════════════ */
+.p3-photo{margin:6.5mm -16mm 0;height:80mm;position:relative}
+.p3-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 84%}
+.p3-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,44,31,0) 60%,rgba(15,44,31,.55) 100%)}
+.p3-photo figcaption{position:absolute;left:16mm;bottom:3mm;z-index:1;color:rgba(255,255,255,.8)}
+.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:8mm;margin-top:7mm}
+.reasons h3{font-size:9.6pt;line-height:1;color:#fff;white-space:nowrap}
+.reasons p{font-size:8.7pt;line-height:1.5;margin-top:2.4mm;color:rgba(242,245,236,.78)}
+.sub-h{display:flex;align-items:center;gap:3mm;margin-top:6.6mm;color:var(--ball)}
+.sub-h::after{content:"";flex:1;height:.25mm;background:var(--rule-d)}
+.team{display:grid;grid-template-columns:repeat(6,1fr);gap:3mm;margin-top:3.6mm}
+.team figure img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 22%;border-radius:1mm}
+.team figcaption{margin-top:1.8mm}
+.team figcaption b{display:block;font-family:var(--fx);font-stretch:100%;font-weight:700;font-size:7.8pt;letter-spacing:.02em;color:#fff}
+.team figcaption span{display:block;font-size:6.9pt;color:var(--mute-d);margin-top:.3mm;line-height:1.25}
+.team-more{margin-top:2.6mm;font-size:7.6pt;color:var(--mute-d)}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:7mm;margin-top:3.6mm}
+.quotes figure{border-top:.5mm solid var(--ball);padding-top:3mm}
+.quotes blockquote{font-size:9pt;line-height:1.5;color:rgba(242,245,236,.9)}
+.quotes figcaption{margin-top:2.2mm;color:#fff}
+.partners{position:absolute;left:16mm;right:16mm;bottom:11.5mm;display:flex;gap:4mm;align-items:baseline;color:var(--mute-d);border-top:.25mm solid var(--rule-d);padding-top:3mm}
+.partners span{font-size:8pt}
+
+/* ══ P4 · 40 · Our venues (true-scale court) ══════════════ */
+.court-pg{background:var(--surround)}
+.court-pg .surface{position:absolute;top:0;bottom:0;left:8mm;right:8mm;background:var(--court)}
+.court-pg .surface::after{content:"";position:absolute;inset:0;opacity:.18;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+.cl{position:absolute;background:var(--line);box-shadow:0 0 1.6mm rgba(255,255,255,.22)}
+.cl.v{width:.9mm}
+.cl.h{height:.9mm}
+.net{position:absolute;left:0;right:0;top:calc(165.18mm - 2.1mm);height:4.2mm;z-index:3;
+  background:
+    linear-gradient(var(--line),var(--line)) 0 0/100% 1mm no-repeat,
+    repeating-linear-gradient(90deg,rgba(10,20,15,.95) 0 .35mm,transparent .35mm 1.5mm),
+    repeating-linear-gradient(0deg,rgba(10,20,15,.95) 0 .35mm,transparent .35mm 1.5mm),
+    rgba(10,22,16,.55);
+  box-shadow:0 .8mm 1.6mm rgba(0,0,0,.35)}
+.box{position:absolute;overflow:hidden;z-index:2;background:var(--night)}
+.box img{width:100%;height:100%;object-fit:cover}
+.box::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,16,11,0) 58%,rgba(6,16,11,.82) 100%)}
+.box figcaption{position:absolute;left:4mm;right:4mm;bottom:3.6mm;z-index:1}
+.box figcaption b{display:block;font-family:var(--fx);font-stretch:125%;font-weight:800;text-transform:uppercase;font-size:10.5pt;line-height:1;color:#fff;letter-spacing:-.005em}
+.box figcaption span{display:block;font-size:7.6pt;color:rgba(255,255,255,.82);margin-top:1.4mm}
+.box-tl{left:34.83mm;top:54.6mm;width:67.57mm;height:106.98mm}
+.box-tr{left:107.6mm;top:54.6mm;width:67.57mm;height:106.98mm}
+.box-bl{left:34.83mm;top:168.78mm;width:67.57mm;height:106.98mm}
+.box-br{left:107.6mm;top:168.78mm;width:67.57mm;height:106.98mm}
+.alley{position:absolute;top:52mm;height:226.36mm;width:24.23mm;display:flex;align-items:center;justify-content:center;z-index:2}
+.alley .c{writing-mode:vertical-rl;transform:rotate(180deg);color:rgba(242,245,236,.6);letter-spacing:.32em;font-size:6.9pt;white-space:nowrap}
+.alley-l{left:8mm}.alley-r{right:8mm}
+.p4-head{position:absolute;top:12mm;left:36.2mm;right:36.2mm;z-index:2}
+.p4-head .eyebrow{color:var(--mute-d)}
+.p4-head h2{font-size:27pt;color:#fff;margin-top:5.2mm;line-height:.9}
+.p4-foot{position:absolute;bottom:5.4mm;left:36.2mm;right:36.2mm;text-align:center;z-index:2;color:rgba(242,245,236,.72);font-size:6.8pt}
+
+/* ══ P5 · GAME · Start here ═══════════════════════════════ */
+.offers{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:6mm}
+.offer{border-radius:1.6mm;padding:5.2mm 6mm 5mm;position:relative;display:flex;flex-direction:column}
+.offer.grp{background:#fff;box-shadow:inset 0 0 0 .3mm var(--rule-l)}
+.offer.prv{background:var(--ball)}
+.offer .c{color:var(--ink)}
+.offer .amt{font-family:var(--fx);font-stretch:125%;font-weight:850;font-size:46pt;line-height:.9;margin-top:3mm;letter-spacing:-.02em}
+.offer .amt sup{font-size:.42em;vertical-align:.95em;margin-right:.6mm;letter-spacing:0}
+.offer .what{font-size:9.6pt;font-weight:600;margin-top:2.6mm}
+.offer .then{font-size:8.2pt;color:var(--ink-2);margin-top:auto;padding-top:3mm;border-top:.25mm solid var(--rule-l)}
+.offer .was{text-decoration:line-through;text-decoration-thickness:.25mm;color:rgba(18,24,21,.6);font-weight:500}
+.prices{width:100%;border-collapse:collapse;margin-top:5.6mm;font-size:8.5pt}
+.prices caption{text-align:left;padding-bottom:2.4mm;color:var(--ink)}
+.prices th{text-align:left;padding:0 2mm 1.8mm;color:var(--ink-2);border-bottom:.5mm solid var(--ink)}
+.prices th:first-child,.prices td:first-child{padding-left:0}
+.prices th.r,.prices td.r{text-align:right}
+.prices td{padding:1.22mm 2mm;border-bottom:.25mm solid var(--rule-l)}
+.prices td:first-child{font-weight:600}
+.prices td:last-child{font-family:var(--fx);font-stretch:100%;font-weight:750;color:var(--ink)}
+.prices .grp-row td{background:rgba(196,217,46,.18)}
+.prices .sep td{padding-top:2.6mm}
+.pnote{font-size:7.6pt;color:var(--ink-2);margin-top:2.2mm}
+.p5-bottom{display:grid;grid-template-columns:1fr 64mm;gap:7mm;margin-top:5.4mm}
+.steps{list-style:none;counter-reset:s}
+.steps li{display:grid;grid-template-columns:8mm 1fr;gap:2mm;padding:2.2mm 0;border-top:.25mm solid var(--rule-l)}
+.steps li:first-child{border-top:.5mm solid var(--ink)}
+.steps li::before{counter-increment:s;content:counter(s);font-family:var(--fx);font-stretch:125%;font-weight:850;font-size:13pt;line-height:1;color:var(--ink)}
+.steps b{display:block;font-family:var(--fx);font-stretch:100%;font-weight:700;font-size:9.4pt}
+.steps span{display:block;font-size:8.2pt;color:var(--ink-2);margin-top:.6mm;line-height:1.4}
+.contact{background:var(--night);color:var(--line);border-radius:1.6mm;padding:5mm;display:flex;flex-direction:column;gap:3.4mm}
+.qrrow{display:flex;gap:3.6mm;align-items:center}
+.qr{width:22mm;height:22mm;background:#fff;border-radius:1mm;padding:1.8mm;flex:none}
+.qr svg{width:100%;height:100%;display:block}
+.qrrow .c{color:var(--ball)}
+.qrrow p{font-size:7.8pt;color:var(--mute-d);margin-top:1mm;line-height:1.35}
+.phone{font-family:var(--fx);font-stretch:125%;font-weight:850;font-size:17pt;line-height:1;color:#fff;letter-spacing:-.01em}
+.links{font-size:8pt;line-height:1.6;color:rgba(242,245,236,.85)}
+.know{display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;position:absolute;left:16mm;right:16mm;bottom:11.5mm;padding-top:3mm;border-top:.25mm solid var(--rule-l)}
+.know p{font-size:7.1pt;line-height:1.4;color:var(--ink-2)}
+.know p b{color:var(--ink);font-weight:700}
+
+/* ── Screen presentation ─────────────────────────────────── */
+@media screen{
+  body{padding:28px 0}
+  .page{margin:0 auto 28px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
 }
-.page:last-child{page-break-after:auto;break-after:auto}
-.screen-gap .page{margin:22px auto;box-shadow:0 30px 70px rgba(0,0,0,.45)}
-.pad{padding:14mm 18mm 12mm}
-.eyebrow{font-family:var(--fb);font-weight:800;font-size:10.5pt;letter-spacing:.2em;text-transform:uppercase;color:var(--lime-600);display:flex;align-items:center;gap:12px}
-.eyebrow.on-dark{color:var(--lime)}
-.eyebrow i{width:30px;height:4px;border-radius:3px;background:currentColor;display:inline-block}
-.kicker{font-family:var(--fb);font-weight:700;font-size:9.5pt;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-500)}
+@media print{ body{background:none} }
+@page{size:210mm 297mm;margin:0}
 
-/* ---- Brand lockup ---- */
-.brand{display:flex;align-items:center;gap:12px}
-.brand svg{width:30px;height:30px;display:block}
-.brand .nm{font-family:var(--fd);font-weight:900;letter-spacing:.14em;font-size:18pt;color:var(--ink)}
-.brand.on-dark .nm{color:#fff}
-
-/* ---- Page 1 cover ---- */
-.cover{color:var(--on-dark);background:var(--court-900)}
-.cover .hero{position:absolute;inset:0}
-.cover .hero img{width:100%;height:100%;object-fit:cover;object-position:50% 42%}
-.cover .hero::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(15,44,31,.55) 0%,rgba(15,44,31,.12) 32%,rgba(15,44,31,.55) 66%,rgba(12,30,21,.97) 100%)}
-.cover .inner{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:20mm}
-.cover .top{display:flex;justify-content:space-between;align-items:flex-start}
-.cover .doc{font-family:var(--fb);font-weight:700;font-size:9.5pt;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-dim);text-align:right}
-.cover h1{font-size:62pt;font-weight:900;color:#fff;letter-spacing:-.03em;line-height:.92;max-width:15ch;text-shadow:0 6px 30px rgba(0,0,0,.35)}
-.cover h1 em{font-style:normal;color:var(--lime)}
-.cover .lead{margin-top:16px;font-size:13pt;line-height:1.5;color:var(--on-dark);max-width:44ch;font-weight:500}
-.cover .locs{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 10px;font-weight:700;font-size:11pt;color:var(--lime)}
-.cover .locs .dot{color:rgba(255,255,255,.4)}
-
-/* section heading */
-.sec-h{font-size:34pt;font-weight:900;letter-spacing:-.025em;line-height:.96;margin:14px 0 0}
-.sec-h em{font-style:normal;color:var(--lime-600)}
-.sublead{font-size:12pt;line-height:1.55;color:var(--ink-700);max-width:60ch;margin-top:11px;font-weight:500}
-
-/* who-we-are band */
-.mission{margin-top:auto;background:var(--court-900);color:var(--on-dark);border-radius:4px;padding:26px 28px;position:relative}
-.mission .q{font-family:var(--fd);font-weight:700;font-size:15.5pt;line-height:1.28;letter-spacing:-.01em;color:#fff}
-.mission .q b{color:var(--lime);font-weight:700}
-.mission .lbl{margin-top:14px;font-weight:800;font-size:9pt;letter-spacing:.18em;text-transform:uppercase;color:var(--on-dark-dim)}
-
-.statrow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}
-.stat{border-top:3px solid var(--lime);padding-top:12px}
-.stat .n{font-family:var(--fd);font-weight:900;font-size:30pt;letter-spacing:-.03em;line-height:1;color:var(--court-800)}
-.stat .l{font-size:9.5pt;font-weight:600;color:var(--ink-500);margin-top:6px;line-height:1.3}
-
-/* offer cards */
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:15px}
-.card{border:1px solid var(--paper-2);background:#fff;border-radius:6px;padding:15px 16px;position:relative;overflow:hidden}
-.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--lime)}
-.card .ic{font-family:var(--fd);font-weight:900;font-size:12pt;color:var(--lime-600);letter-spacing:.04em}
-.card h3{font-family:var(--fb);font-weight:800;font-size:13.5pt;letter-spacing:-.01em;margin:6px 0 5px;color:var(--ink)}
-.card p{font-size:10.5pt;line-height:1.5;color:var(--ink-700)}
-.card .price{margin-top:10px;font-weight:800;font-size:10pt;color:var(--court-700)}
-
-/* why list */
-.why{display:grid;grid-template-columns:1fr 1fr;gap:13px 24px;margin-top:18px}
-.why .item{display:flex;gap:14px;align-items:flex-start}
-.why .num{font-family:var(--fd);font-weight:900;font-size:17pt;color:var(--lime-600);line-height:1;min-width:34px}
-.why h3{font-family:var(--fb);font-weight:800;font-size:12.5pt;margin:0 0 5px;color:var(--ink)}
-.why p{font-size:10.5pt;line-height:1.5;color:var(--ink-700)}
-.band-dark{background:var(--court-900);color:var(--on-dark);border-radius:4px;padding:17px 22px;margin-top:16px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.band-dark .n{font-family:var(--fd);font-weight:900;font-size:26pt;color:var(--lime);line-height:1;letter-spacing:-.02em}
-.band-dark .l{font-size:9pt;color:var(--on-dark-dim);margin-top:6px;font-weight:600;line-height:1.3}
-
-/* trial */
-.trials{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
-.trial{border-radius:8px;padding:22px;position:relative;overflow:hidden}
-.trial.group{background:var(--paper-2);border:1px solid #e2e6dd}
-.trial.priv{background:var(--court-900);color:#fff}
-.trial .tag{font-weight:800;font-size:8.5pt;letter-spacing:.16em;text-transform:uppercase;color:var(--lime-600)}
-.trial.priv .tag{color:var(--lime)}
-.trial h3{font-family:var(--fb);font-weight:800;font-size:15pt;margin:8px 0 4px}
-.trial .amt{font-family:var(--fd);font-weight:900;font-size:40pt;letter-spacing:-.03em;line-height:1;color:var(--court-800)}
-.trial.priv .amt{color:var(--lime)}
-.trial .amt small{font-size:14pt;font-weight:700}
-.trial p{font-size:10pt;line-height:1.45;margin-top:8px;color:var(--ink-700)}
-.trial.priv p{color:var(--on-dark-dim)}
-
-table.price{width:100%;border-collapse:collapse;margin-top:12px;font-size:10pt}
-table.price th{font-family:var(--fb);text-align:left;font-size:8.5pt;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-500);padding:0 8px 8px;border-bottom:2px solid var(--court-900)}
-table.price th.r,table.price td.r{text-align:right;font-variant-numeric:tabular-nums}
-table.price td{padding:6px 8px;border-bottom:1px solid var(--paper-2)}
-table.price tr td:first-child{font-weight:600;color:var(--ink)}
-table.price .grp{background:var(--paper-2)}
-table.price .grp td{font-family:var(--fd);font-weight:800;font-size:8.5pt;letter-spacing:.12em;text-transform:uppercase;color:var(--court-800);padding:7px 8px}
-table.price .hl td{background:rgba(196,217,46,.16)}
-table.price td b{color:var(--court-700)}
-.gst{font-size:9pt;color:var(--ink-500);margin-top:10px}
-
-/* facilities */
-.facs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
-.fac{border-radius:6px;overflow:hidden;background:#fff;border:1px solid var(--paper-2)}
-.fac .ph{height:104px;overflow:hidden;position:relative}
-.fac .ph img{width:100%;height:100%;object-fit:cover}
-.fac .meta{padding:12px 14px}
-.fac .nm{font-family:var(--fd);font-weight:800;font-size:11.5pt;color:var(--ink);letter-spacing:.01em}
-.fac .ad{font-size:9pt;color:var(--ink-500);margin-top:3px;line-height:1.35}
-
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
-.step{border-top:3px solid var(--court-900);padding-top:10px}
-.step .s{font-family:var(--fd);font-weight:900;font-size:10pt;color:var(--lime-600);letter-spacing:.1em}
-.step h4{font-family:var(--fb);font-weight:800;font-size:11.5pt;margin:6px 0 4px}
-.step p{font-size:9.5pt;color:var(--ink-700);line-height:1.4}
-
-.cta{margin-top:14px;background:var(--lime);color:var(--on-lime);border-radius:8px;padding:18px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.cta h3{font-family:var(--fd);font-weight:900;font-size:22pt;letter-spacing:-.02em;line-height:.98}
-.cta .contact{text-align:right;font-weight:700;font-size:10.5pt;line-height:1.7}
-.cta .contact b{font-family:var(--fd);font-size:16pt;display:block;letter-spacing:.01em}
-
-.foot{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--paper-2);font-size:8.5pt;color:var(--ink-500);letter-spacing:.04em}
-.pagenum{font-family:var(--fd);font-weight:800}
-
-@media print{
-  body{background:#fff}
-  .screen-gap .page{margin:0;box-shadow:none}
-  .page{margin:0}
+/* ── Phones: reflow into a readable single column ───────── */
+@media screen and (max-width:760px){
+  body{padding:0;font-size:15px}
+  .page{width:100%;height:auto;margin:0;box-shadow:none;overflow:visible}
+  .pad,.p1-top,.p1-title,.p1-body,.partners,.know,.p4-head,.p4-foot,.alley,.box,.net{position:static}
+  .pad{padding:28px 20px}
+  .p1{display:flex;flex-direction:column}
+  .p1-hero{position:relative;height:118vw;order:0}
+  .p1-top{position:absolute;top:18px;left:20px;right:20px}
+  .p1-title{position:absolute;top:22vw}
+  .p1-title h1{font-size:15vw}
+  .p1-title p{font-size:15px}
+  .p1-body{padding:4px 20px 30px}
+  .p1-cols,.formats,.programs,.reasons,.quotes,.p5-bottom,.offers{grid-template-columns:1fr}
+  .formats{grid-template-columns:repeat(2,1fr)}
+  .scoreboard{grid-template-columns:repeat(2,1fr);row-gap:14px}
+  .scoreboard div:nth-child(3){padding-left:0;border-left:0}
+  .who p,.lead{font-size:16px}
+  .h2{font-size:11vw}
+  .mission blockquote{font-size:19px}
+  .team{grid-template-columns:repeat(3,1fr)}
+  .also{grid-template-columns:1fr}
+  .also div + div{border-left:0;border-top:.25mm solid var(--rule-l)}
+  .p3-photo{margin:24px -20px 0;height:62vw}
+  .partners,.know{margin-top:28px;flex-wrap:wrap}
+  .know{grid-template-columns:1fr 1fr;display:grid}
+  .court-pg{padding:28px 20px 34px}
+  .court-pg .surface,.cl{display:none}
+  .court-pg .p4-head h2{font-size:9vw}
+  .court-pg .grid4{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:var(--line);border:3px solid var(--line);margin-top:22px}
+  .box,.box-tl,.box-tr,.box-bl,.box-br{position:relative;width:auto;height:62vw;left:auto;top:auto;min-width:0}
+  .box figcaption{left:10px;right:10px;bottom:10px}
+  .box figcaption span{font-size:11px}
+  .partners,.know{margin:0;padding:18px 20px 28px}
+  .box figcaption{position:absolute}
+  .net{display:none}
+  .alley{display:none}
+  .p4-foot{margin-top:18px;font-size:12px}
+  .prog .ph,.camp{height:52vw}
+  .c{font-size:11px}
 }
-@page{size:A4;margin:0}
-
-/* screen readability on small viewports (scoped to screen + below A4 width) */
-@media screen and (max-width:680px){
-  .page{width:100%;height:auto;min-height:auto}
-  .cover h1{font-size:40pt}
-  .cards,.why,.trials,.facs,.statrow,.band-dark,.steps{grid-template-columns:1fr}
-  .cta{flex-direction:column;align-items:flex-start}.cta .contact{text-align:left}
-}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
-<body class="screen-gap">
+<body>
 
-<!-- ========== PAGE 1 · WHO WE ARE / COVER ========== -->
-<section class="page cover">
-  <div class="hero"><img src="assets/hero-northryde.jpg" alt="WWTA floodlit court at sunset"></div>
-  <div class="inner">
-    <div class="top">
-      <div class="brand on-dark">
-        <svg viewBox="0 0 48 44" fill="none" aria-hidden="true"><path d="M24 3 L45 41 H32 L24 25 L16 41 H3 Z" fill="#c4d92e"/><path d="M24 14 L31 28 H17 Z" fill="#17402d"/></svg>
-        <span class="nm">WWTA</span>
+<!-- ═══════════════ LOVE · Who we are ═══════════════ -->
+<section class="page dark p1" aria-label="Who we are">
+  <figure class="p1-hero"><img src="assets/cover-northryde.jpg" alt="An evening group drill under floodlights at North Ryde, sky fading from cobalt to amber"></figure>
+  <div class="p1-top">
+    <div class="brand"><img src="assets/logo-light.png" alt="WWTA"><span class="c">Worldwide<br>Tennis Academy</span></div>
+    <div class="bug" aria-label="Page 1 of 5"><span class="club c">WWTA</span><span class="score">LOVE</span></div>
+  </div>
+  <div class="p1-title">
+    <h1 class="x">Play<br>with us.</h1>
+    <p>Sydney's tennis community, since 2010.</p>
+  </div>
+  <div class="p1-body">
+    <div class="p1-cols">
+      <div class="who">
+        <p class="c">Who we are</p>
+        <p>Worldwide Tennis Academy has coached across Sydney since 2010. Every session is built on scientifically proven technique and tactics — and on the simple belief that tennis should be enjoyed. Today that's 1,838 members, a ten-strong team and four venues where first-timers, families, social players and future pros share the same courts.</p>
       </div>
-      <div class="doc">Information Pack<br>2026 · Sydney</div>
-    </div>
-    <div>
-      <div class="eyebrow on-dark"><i></i>Worldwide Tennis Academy · Est. 2010</div>
-      <h1>Sydney's tennis <em>community.</em></h1>
-      <p class="lead">Coaching for social players, juniors and elite athletes across four Sydney locations — since 2010. Come for the tennis. Stay for the people.</p>
-      <div class="locs"><span>Auburn</span><span class="dot">•</span><span>Burwood</span><span class="dot">•</span><span>North Ryde</span><span class="dot">•</span><span>Granville</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ========== PAGE 2 · WHO WE ARE (story + mission) ========== -->
-<section class="page">
-  <div class="pad" style="flex:1;display:flex;flex-direction:column">
-    <div class="eyebrow"><i></i>01 — Who we are</div>
-    <h2 class="sec-h">More than a court.<br>A <em>community.</em></h2>
-    <p class="sublead">Worldwide Tennis Academy has coached Sydney since 2010. What began on a single court is now a 300-plus member community across four locations — beginners picking up a racquet for the first time, juniors on a pathway to US college scholarships, and adults who come to switch off and play.</p>
-    <p class="sublead" style="margin-top:12px">Tennis is the reason people arrive. The coaching, the friendships and the feeling of getting better are why they stay. Whatever your age or level, there's a place for you on our courts.</p>
-
-    <div class="statrow">
-      <div class="stat"><div class="n">15<span style="font-size:16pt">yrs</span></div><div class="l">Coaching Sydney since 2010</div></div>
-      <div class="stat"><div class="n">300+</div><div class="l">Players in our community</div></div>
-      <div class="stat"><div class="n">4</div><div class="l">Locations across Sydney</div></div>
-      <div class="stat"><div class="n">All</div><div class="l">Ages &amp; levels welcome</div></div>
-    </div>
-
-    <div class="mission">
-      <div class="q">“WWTA provides a <b>positive sporting environment</b> for the benefit of all members of the community — committed to the <b>health, welfare and wellbeing</b> of its players, supporters and families.”</div>
-      <div class="lbl">— Our mission</div>
-    </div>
-    <div class="foot"><span class="wm" style="letter-spacing:.14em">WWTA</span><span>#SYDNEY.TENNIS · wwta.com.au</span><span class="pagenum">01</span></div>
-  </div>
-</section>
-
-<!-- ========== PAGE 3 · WHAT WE OFFER ========== -->
-<section class="page">
-  <div class="pad" style="flex:1;display:flex;flex-direction:column">
-    <div class="eyebrow"><i></i>02 — What we offer</div>
-    <h2 class="sec-h">A program for <em>every player.</em></h2>
-    <p class="sublead">From a first group lesson to elite performance coaching — structured, technique-based and built to keep you improving.</p>
-
-    <div class="cards">
-      <div class="card"><div class="ic">01 / Social</div><h3>Group Coaching</h3><p>Small groups of up to six, every level welcome. The most popular way to learn, get fit and meet people.</p><div class="price">From $360 · 10-week term</div></div>
-      <div class="card"><div class="ic">02 / Private</div><h3>Private &amp; Semi-Private</h3><p>1:1, 2:1, 3:1, 4:1 and family groups. The fastest, most personalised path to real improvement.</p><div class="price">From $45 pp · per session</div></div>
-      <div class="card"><div class="ic">03 / Juniors</div><h3>Juniors · ANZ Hot Shots</h3><p>Modified courts, racquets and balls so kids rally from day one — big fun and real skills that last.</p><div class="price">Kids · all ages</div></div>
-      <div class="card"><div class="ic">04 / Elite</div><h3>High-Performance Pathway</h3><p>Technical, physical and mental development for serious juniors — our players have earned US scholarships.</p><div class="price">By assessment</div></div>
-      <div class="card"><div class="ic">05 / Fitness</div><h3>Get Fit · Social Tennis</h3><p>Floodlit evening sessions across Sydney. Fitness that doesn't feel like the gym, with great company.</p><div class="price">Evenings · all levels</div></div>
-      <div class="card"><div class="ic">06 / More</div><h3>Camps, UTR &amp; Pro Shop</h3><p>School-holiday camps, UTR match play, racquet restringing and equipment — everything in one place.</p><div class="price">Enquire anytime</div></div>
-    </div>
-    <div class="foot"><span class="wm" style="letter-spacing:.14em">WWTA</span><span>#SYDNEY.TENNIS · wwta.com.au</span><span class="pagenum">02</span></div>
-  </div>
-</section>
-
-<!-- ========== PAGE 4 · WHY CHOOSE WWTA ========== -->
-<section class="page">
-  <div class="pad" style="flex:1;display:flex;flex-direction:column">
-    <div class="eyebrow"><i></i>03 — Why choose WWTA</div>
-    <h2 class="sec-h">Fifteen years of <em>getting it right.</em></h2>
-    <p class="sublead">Plenty of places will hit balls with you. Here's what makes an hour at WWTA different.</p>
-
-    <div class="why">
-      <div class="item"><div class="num">01</div><div><h3>Proven since 2010</h3><p>Not a pop-up or a trend — a Sydney tennis institution with fifteen years of coaching behind it.</p></div></div>
-      <div class="item"><div class="num">02</div><div><h3>Elite coaching team</h3><p>Head Coaches and High-Performance Coaches delivering technique-based, scientifically proven improvement.</p></div></div>
-      <div class="item"><div class="num">03</div><div><h3>Four home courts</h3><p>Auburn, Burwood, North Ryde and Granville — a quality court close to where you live or work.</p></div></div>
-      <div class="item"><div class="num">04</div><div><h3>Real pathways</h3><p>From a child's first rally to juniors earning US college scholarships — the ladder is already built.</p></div></div>
-      <div class="item"><div class="num">05</div><div><h3>Built around you</h3><p>Level changes when you're ready, make-up lessons, and a clear wet-weather policy. Flexible by design.</p></div></div>
-      <div class="item"><div class="num">06</div><div><h3>A genuine community</h3><p>300+ members who arrive for tennis and stay for the people. You're joining a club, not booking a court.</p></div></div>
-    </div>
-
-    <div class="band-dark">
-      <div><div class="n">2010</div><div class="l">Established in Sydney</div></div>
-      <div><div class="n">300+</div><div class="l">Active members</div></div>
-      <div><div class="n">4</div><div class="l">Locations</div></div>
-      <div><div class="n">USA</div><div class="l">Scholarship outcomes</div></div>
-    </div>
-    <div class="foot"><span class="wm" style="letter-spacing:.14em">WWTA</span><span>#SYDNEY.TENNIS · wwta.com.au</span><span class="pagenum">03</span></div>
-  </div>
-</section>
-
-<!-- ========== PAGE 5 · TRIAL + PRICING ========== -->
-<section class="page">
-  <div class="pad" style="flex:1;display:flex;flex-direction:column">
-    <div class="eyebrow"><i></i>04 — Start with a trial</div>
-    <h2 class="sec-h">Try us <em>before you commit.</em></h2>
-    <p class="sublead">One session is all it takes to feel the difference. Pick the trial that suits you — no term sign-up required.</p>
-
-    <div class="trials">
-      <div class="trial group">
-        <div class="tag">Group trial · max 6</div>
-        <h3>Group Lesson</h3>
-        <div class="amt"><small>$</small>40</div>
-        <p>One full hour in a small group, any level. The easiest, most social way to try WWTA.</p>
-      </div>
-      <div class="trial priv">
-        <div class="tag">1:1 trial · most popular</div>
-        <h3>Private Lesson</h3>
-        <div class="amt"><small>$</small>89</div>
-        <p>A full hour of personal coaching to learn the basics and get comfortable on court, fast.</p>
+      <div class="mission">
+        <p class="c">Our mission</p>
+        <blockquote>To cultivate a culture of tennis for young professional athletes, provide social tennis for everyone, and put the enjoyment of the game first.</blockquote>
       </div>
     </div>
+    <div class="baseline" aria-hidden="true"></div>
+    <dl class="scoreboard">
+      <div><dt class="c">Since</dt><dd class="x num">2010</dd></div>
+      <div><dt class="c">Members</dt><dd class="x num">1,838</dd></div>
+      <div><dt class="c">Coaches &amp; staff</dt><dd class="x num">10</dd></div>
+      <div><dt class="c">Venues</dt><dd class="x num">4</dd></div>
+    </dl>
+  </div>
+</section>
 
-    <table class="price">
-      <thead><tr><th>Program</th><th class="r">Trial / 1 hr</th><th class="r">10-week term</th></tr></thead>
-      <tbody>
-        <tr class="grp"><td colspan="3">Intensive lessons</td></tr>
-        <tr class="hl"><td>Group lesson (per person, max 6)</td><td class="r"><b>$40</b></td><td class="r">$360</td></tr>
-        <tr><td>Private 1:1 (1 hour)</td><td class="r">$120</td><td class="r">$1,100</td></tr>
-        <tr><td>Private 1:1 (30 min)</td><td class="r">$70</td><td class="r">$650</td></tr>
-        <tr><td>2:1 lesson (per person)</td><td class="r">$70</td><td class="r">$650</td></tr>
-        <tr><td>3:1 lesson (per person)</td><td class="r">$55</td><td class="r">$480</td></tr>
-        <tr><td>4:1 lesson (per person)</td><td class="r">$45</td><td class="r">$420</td></tr>
-        <tr><td>Family group</td><td class="r">—</td><td class="r">$1,300</td></tr>
-        <tr class="grp"><td colspan="3">1:1 intensive private</td></tr>
-        <tr><td>Head Coach</td><td class="r">$140</td><td class="r">$1,300</td></tr>
-        <tr><td>High-Performance Coach</td><td class="r">$130</td><td class="r">$1,200</td></tr>
-        <tr><td>UTR events · tennis camps · restringing</td><td class="r">Contact</td><td class="r">—</td></tr>
-        <tr><td>Equipment (racquets &amp; more)</td><td class="r">Contact</td><td class="r">—</td></tr>
+<!-- ═══════════════ 15 · What we offer ═══════════════ -->
+<section class="page light" aria-label="What we offer">
+  <div class="pad">
+    <div class="head">
+      <p class="eyebrow c"><b>15</b><i></i>What we offer</p>
+      <div class="bug" aria-label="Page 2 of 5"><span class="club c">WWTA</span><span class="score">15</span></div>
+    </div>
+    <h2 class="x h2">One club.<br>Every level.</h2>
+    <p class="lead">Lessons for adults and kids, from your first rally to tournament play — plus the pathways, camps and services that keep you on court.</p>
+
+    <div class="lessons">
+      <div class="lessons-top"><h3 class="x">Intensive lessons</h3><span class="c">Adults &amp; kids · beginner to advanced</span></div>
+      <p class="d">Master the six core strokes, use them in real game situations and get comfortable at the net. Choose how many players share your coach:</p>
+      <div class="formats">
+        <!-- coach = lime dot (left), players = white dots (right) -->
+        <div class="fmt">
+          <svg viewBox="0 0 64 36" aria-hidden="true"><rect x="1" y="1" width="62" height="34" fill="rgba(255,255,255,.05)" stroke="#f2f5ec" stroke-width=".9"/><path d="M1 5h62M1 31h62M16 5v26M48 5v26M16 18h32" stroke="#f2f5ec" stroke-width=".6" fill="none" opacity=".7"/><path d="M32 0v36" stroke="#f2f5ec" stroke-width="1.6"/><circle cx="22" cy="18" r="2.8" fill="#c4d92e"/><circle cx="42" cy="18" r="2.3" fill="#f2f5ec"/></svg>
+          <p class="c">1:1 Private</p><p class="p num">$110<small>/60 min</small></p><p class="s">or $65 for 30 min</p>
+        </div>
+        <div class="fmt">
+          <svg viewBox="0 0 64 36" aria-hidden="true"><rect x="1" y="1" width="62" height="34" fill="rgba(255,255,255,.05)" stroke="#f2f5ec" stroke-width=".9"/><path d="M1 5h62M1 31h62M16 5v26M48 5v26M16 18h32" stroke="#f2f5ec" stroke-width=".6" fill="none" opacity=".7"/><path d="M32 0v36" stroke="#f2f5ec" stroke-width="1.6"/><circle cx="22" cy="18" r="2.8" fill="#c4d92e"/><circle cx="42" cy="12" r="2.3" fill="#f2f5ec"/><circle cx="42" cy="24" r="2.3" fill="#f2f5ec"/></svg>
+          <p class="c">2:1 Semi-private</p><p class="p num">$65<small>pp</small></p><p class="s">per person</p>
+        </div>
+        <div class="fmt">
+          <svg viewBox="0 0 64 36" aria-hidden="true"><rect x="1" y="1" width="62" height="34" fill="rgba(255,255,255,.05)" stroke="#f2f5ec" stroke-width=".9"/><path d="M1 5h62M1 31h62M16 5v26M48 5v26M16 18h32" stroke="#f2f5ec" stroke-width=".6" fill="none" opacity=".7"/><path d="M32 0v36" stroke="#f2f5ec" stroke-width="1.6"/><circle cx="22" cy="18" r="2.8" fill="#c4d92e"/><circle cx="40" cy="10" r="2.3" fill="#f2f5ec"/><circle cx="45" cy="18" r="2.3" fill="#f2f5ec"/><circle cx="40" cy="26" r="2.3" fill="#f2f5ec"/></svg>
+          <p class="c">3:1 Team</p><p class="p num">$48<small>pp</small></p><p class="s">per person</p>
+        </div>
+        <div class="fmt">
+          <svg viewBox="0 0 64 36" aria-hidden="true"><rect x="1" y="1" width="62" height="34" fill="rgba(255,255,255,.05)" stroke="#f2f5ec" stroke-width=".9"/><path d="M1 5h62M1 31h62M16 5v26M48 5v26M16 18h32" stroke="#f2f5ec" stroke-width=".6" fill="none" opacity=".7"/><path d="M32 0v36" stroke="#f2f5ec" stroke-width="1.6"/><circle cx="22" cy="18" r="2.8" fill="#c4d92e"/><circle cx="40" cy="12" r="2.3" fill="#f2f5ec"/><circle cx="40" cy="24" r="2.3" fill="#f2f5ec"/><circle cx="51" cy="12" r="2.3" fill="#f2f5ec"/><circle cx="51" cy="24" r="2.3" fill="#f2f5ec"/></svg>
+          <p class="c">4:1 Team</p><p class="p num">$42<small>pp</small></p><p class="s">per person</p>
+        </div>
+        <div class="fmt">
+          <svg viewBox="0 0 64 36" aria-hidden="true"><rect x="1" y="1" width="62" height="34" fill="rgba(255,255,255,.05)" stroke="#f2f5ec" stroke-width=".9"/><path d="M1 5h62M1 31h62M16 5v26M48 5v26M16 18h32" stroke="#f2f5ec" stroke-width=".6" fill="none" opacity=".7"/><path d="M32 0v36" stroke="#f2f5ec" stroke-width="1.6"/><circle cx="22" cy="18" r="2.8" fill="#c4d92e"/><circle cx="39" cy="10" r="2.3" fill="#f2f5ec"/><circle cx="39" cy="18" r="2.3" fill="#f2f5ec"/><circle cx="39" cy="26" r="2.3" fill="#f2f5ec"/><circle cx="50" cy="10" r="2.3" fill="#f2f5ec"/><circle cx="50" cy="18" r="2.3" fill="#f2f5ec"/><circle cx="50" cy="26" r="2.3" fill="#f2f5ec"/></svg>
+          <p class="c">Group · up to 6</p><p class="p num">$36<small>pp</small></p><p class="s">per person</p>
+        </div>
+      </div>
+      <p class="fnote">Prices per session on a 10-week term, including GST. Trials and the full price list are on the last page.</p>
+    </div>
+
+    <div class="programs">
+      <article class="prog">
+        <div class="ph"><img src="assets/kids-hotshots.jpg" alt="Juniors with their racquets raised after a Hot Shots session"></div>
+        <h4 class="x">Kids Hot Shots</h4>
+        <p>Smaller courts, lighter racquets, lower nets and balls that don't bounce too high — so kids rally from day one while building coordination, speed and agility.</p>
+        <p class="c">For every child, every age and ability</p>
+      </article>
+      <article class="prog">
+        <div class="ph"><img src="assets/squad-burwood.jpg" alt="A junior squad drilling at the net under floodlights" style="object-position:50% 70%"></div>
+        <h4 class="x">High Performance</h4>
+        <p>Structured junior elite training across the physical and mental game, for players chasing the top of Australian juniors and US college scholarships.</p>
+        <p class="c">Junior elite development</p>
+      </article>
+      <article class="prog">
+        <div class="camp"><span class="c">Ages</span><span class="age num">3–17</span></div>
+        <h4 class="x">Holiday camps</h4>
+        <p>Serve, return, rally, approach, volley and smash — a short, fun program that builds confidence, fitness and tennis awareness.</p>
+        <p class="c">Every school holidays · Terms 1–4</p>
+      </article>
+    </div>
+
+    <div class="also">
+      <p class="c">Also at WWTA</p>
+      <div><b>Restringing</b><span>Professional stringing and customisation</span></div>
+      <div><b>Coach hire</b><span>A WWTA coach for your own group</span></div>
+      <div><b>Tennis Like shop</b><span>Gear our coaches test and rate</span></div>
+      <div><b>UTR events</b><span>Rated match play — ask for dates</span></div>
+    </div>
+    <p class="place"><b>Not sure where you fit?</b> Your trial coach places you in the right program, and moves you up when you're ready.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ 30 · Why WWTA ═══════════════ -->
+<section class="page dark" aria-label="Why WWTA">
+  <div class="pad">
+    <div class="head">
+      <p class="eyebrow c"><b>30</b><i></i>Why WWTA</p>
+      <div class="bug" aria-label="Page 3 of 5"><span class="club c">WWTA</span><span class="score">30</span></div>
+    </div>
+    <h2 class="x h2">Why people<br>stay.</h2>
+    <figure class="p3-photo"><img src="assets/community-jacaranda.jpg" alt="The WWTA community gathered under a flowering jacaranda beside the courts"><figcaption class="c">The WWTA community</figcaption></figure>
+
+    <div class="reasons">
+      <div><h3 class="x">Technique that sticks</h3><p>Coaching built on scientifically proven strategies and tactics, refined on court since 2010 — so you know exactly what to fix, and how.</p></div>
+      <div><h3 class="x">A team of ten</h3><p>Led by Director Jaden S. and Head Coach Joel L., with coaches and reps across all four venues — including a dedicated ladies' rep.</p></div>
+      <div><h3 class="x">A club, not a class</h3><p>1,838 members and counting. Socials, doubles and a community that keeps people coming back, season after season.</p></div>
+    </div>
+
+    <p class="sub-h c">The team</p>
+    <div class="team">
+      <figure><img src="assets/coach-jaden.jpg" alt="Jaden S. serving"><figcaption><b>Jaden S.</b><span>Director</span></figcaption></figure>
+      <figure><img src="assets/coach-joel.jpg" alt="Joel L. hitting a forehand"><figcaption><b>Joel L.</b><span>M.D / Head Coach</span></figcaption></figure>
+      <figure><img src="assets/coach-hayley.jpg" alt="Hayley L. hitting a forehand"><figcaption><b>Hayley L.</b><span>Ladies Rep</span></figcaption></figure>
+      <figure><img src="assets/coach-jay.jpg" alt="Jay P. serving at night"><figcaption><b>Jay P.</b><span>Operating Manager</span></figcaption></figure>
+      <figure><img src="assets/coach-richard.jpg" alt="Richard B. playing a low volley"><figcaption><b>Richard B.</b><span>Coach</span></figcaption></figure>
+      <figure><img src="assets/coach-anmol.jpg" alt="Anmol K. hitting a forehand"><figcaption><b>Anmol K.</b><span>Coach</span></figcaption></figure>
+    </div>
+    <p class="team-more">Also on the team: Mac L. (Strathfield Rep), Sehee N., Sion K. and Andy L.</p>
+
+    <p class="sub-h c">In their words</p>
+    <div class="quotes">
+      <figure><blockquote>“My first time playing tennis and having the best time with our coach Jaden! Each lesson is packed with fun, learning and cardio.”</blockquote><figcaption class="c">Mari Kawata · first-timer</figcaption></figure>
+      <figure><blockquote>“I have played socially for a long time but wanted to improve my technique. With Jaden my strokes are more powerful and I have more control.”</blockquote><figcaption class="c">John Tran · social player</figcaption></figure>
+      <figure><blockquote>“Each lesson was different and personalised to us! If you want to get fit and sweat you better learn from this man.”</blockquote><figcaption class="c">Lucy Lee · weekly with friends</figcaption></figure>
+    </div>
+  </div>
+  <div class="partners"><span class="c">Partners</span><span>Tennis Australia · Universal Tennis (UTR) · Babolat · Head · Tecnifibre · Tennis Like</span></div>
+</section>
+
+<!-- ═══════════════ 40 · Our venues — drawn to scale ═══════════════ -->
+<!-- Court geometry (mm, scale 17.68 mm per metre): doubles sidelines x=8/202, singles x=32.23/177.77,
+     centre service line x=105, service lines y=52/278.36, net y=165.18. Baselines fall off the page. -->
+<section class="page dark court-pg" aria-label="Our venues">
+  <div class="surface" aria-hidden="true"></div>
+  <div aria-hidden="true">
+    <div class="cl v" style="left:7.55mm;top:0;bottom:0"></div>
+    <div class="cl v" style="left:31.78mm;top:0;bottom:0"></div>
+    <div class="cl v" style="left:177.32mm;top:0;bottom:0"></div>
+    <div class="cl v" style="left:201.55mm;top:0;bottom:0"></div>
+    <div class="cl v" style="left:104.55mm;top:52mm;height:226.36mm"></div>
+    <div class="cl h" style="top:51.55mm;left:32.23mm;width:145.54mm"></div>
+    <div class="cl h" style="top:277.91mm;left:32.23mm;width:145.54mm"></div>
+  </div>
+  <div class="net" aria-hidden="true"></div>
+
+  <div class="p4-head">
+    <div class="head">
+      <p class="eyebrow c"><b>40</b><i></i>Our venues</p>
+      <div class="bug" aria-label="Page 4 of 5"><span class="club c">WWTA</span><span class="score">40</span></div>
+    </div>
+    <h2 class="x">Four venues.<br>One club.</h2>
+  </div>
+
+  <div class="grid4">
+    <figure class="box box-tl"><img src="assets/court-auburn.jpg" alt="Auburn Tennis Club at dusk, several courts in play"><figcaption><b>Auburn</b><span>Auburn Tennis Club · 181 Chisholm Rd, Auburn NSW 2144</span></figcaption></figure>
+    <figure class="box box-tr"><img src="assets/court-northryde.jpg" alt="North Ryde court under tall floodlights during a group drill"><figcaption><b>North Ryde</b><span>North Ryde Tennis Court · 16–18 Epping Rd, North Ryde NSW 2113</span></figcaption></figure>
+    <figure class="box box-bl"><img src="assets/court-burwood.jpg" alt="Burwood Tennis Park during a junior squad session"><figcaption><b>Burwood</b><span>Burwood Tennis Park · Park Avenue, Burwood NSW 2134</span></figcaption></figure>
+    <figure class="box box-br"><img src="assets/court-granville.jpg" alt="Granville Tennis Courts during a social doubles night"><figcaption><b>Granville</b><span>Granville Tennis Courts · 7A Byrnes St, South Granville NSW 2142</span></figcaption></figure>
+  </div>
+  <p class="p4-foot c">Session times vary by venue — ask us for the court nearest you</p>
+</section>
+
+<!-- ═══════════════ GAME · Start here ═══════════════ -->
+<section class="page light" aria-label="Start with a trial">
+  <div class="pad">
+    <div class="head">
+      <p class="eyebrow c"><b>Game</b><i></i>Start here</p>
+      <div class="bug" aria-label="Page 5 of 5"><span class="club c">WWTA</span><span class="score">GAME</span></div>
+    </div>
+    <h2 class="x h2">Start with<br>one hour.</h2>
+    <p class="lead">Try WWTA before you commit — one session, no term required.</p>
+
+    <div class="offers">
+      <div class="offer grp">
+        <p class="c">Group trial</p>
+        <p class="amt num"><sup>$</sup>40</p>
+        <p class="what">One hour · up to 6 players · any level</p>
+        <p class="then">Then $36 a session on a 10-week term ($360)</p>
+      </div>
+      <div class="offer prv">
+        <p class="c">Private 1:1 trial</p>
+        <p class="amt num"><sup>$</sup>89</p>
+        <p class="what">One hour, one coach · <span class="was">$120</span></p>
+        <p class="then">Then $110 a session on a 10-week term ($1,100)</p>
+      </div>
+    </div>
+
+    <table class="prices">
+      <caption class="c">Price list · all prices include GST</caption>
+      <thead><tr><th class="c">Lesson</th><th class="c r">Single</th><th class="c r">10-week term</th><th class="c r">Per session on term</th></tr></thead>
+      <tbody class="num">
+        <tr class="grp-row"><td>Group lesson · up to 6 (per person)</td><td class="r">$40 trial</td><td class="r">$360</td><td class="r">$36</td></tr>
+        <tr><td>Private 1:1 · 60 min</td><td class="r">$120</td><td class="r">$1,100</td><td class="r">$110</td></tr>
+        <tr><td>Private 1:1 · 30 min</td><td class="r">$70</td><td class="r">$650</td><td class="r">$65</td></tr>
+        <tr><td>Semi-private 2:1 (per person)</td><td class="r">$70</td><td class="r">$650</td><td class="r">$65</td></tr>
+        <tr><td>Team 3:1 (per person)</td><td class="r">$55</td><td class="r">$480</td><td class="r">$48</td></tr>
+        <tr><td>Team 4:1 (per person)</td><td class="r">$45</td><td class="r">$420</td><td class="r">$42</td></tr>
+        <tr><td>Family group</td><td class="r">—</td><td class="r">$1,300</td><td class="r">—</td></tr>
+        <tr class="sep"><td>Intensive 1:1 · Head Coach</td><td class="r">$140</td><td class="r">$1,300</td><td class="r">$130</td></tr>
+        <tr><td>Intensive 1:1 · High Performance Coach</td><td class="r">$130</td><td class="r">$1,200</td><td class="r">$120</td></tr>
       </tbody>
     </table>
-    <p class="gst">All prices include GST. Programs run as 10-week terms; 1:1 and 2:1 lessons are also available as 5-week blocks.</p>
-    <div class="foot"><span class="wm" style="letter-spacing:.14em">WWTA</span><span>#SYDNEY.TENNIS · wwta.com.au</span><span class="pagenum">04</span></div>
-  </div>
-</section>
+    <p class="pnote">1:1 and 2:1 lessons also run as 5-week blocks. UTR events, holiday camps, restringing and equipment — ask us.</p>
 
-<!-- ========== PAGE 6 · FACILITIES + HOW TO START ========== -->
-<section class="page">
-  <div class="pad" style="flex:1;display:flex;flex-direction:column">
-    <div class="eyebrow"><i></i>05 — Our courts</div>
-    <h2 class="sec-h">Four homes for your <em>game.</em></h2>
-    <p class="sublead">Quality courts across Sydney, floodlit for evening play. Find the one closest to you.</p>
-
-    <div class="facs">
-      <div class="fac"><div class="ph"><img src="assets/hero-auburn.jpg" alt="Auburn Tennis Club"></div><div class="meta"><div class="nm">Auburn Tennis Club</div><div class="ad">181 Chisholm Rd, Auburn NSW 2144</div></div></div>
-      <div class="fac"><div class="ph"><img src="assets/hero-northryde.jpg" alt="North Ryde Tennis Court"></div><div class="meta"><div class="nm">North Ryde Tennis Court</div><div class="ad">16–18 Epping Rd, North Ryde NSW 2113</div></div></div>
-      <div class="fac"><div class="ph"><img src="assets/hero-burwood.jpg" alt="Burwood Tennis Park"></div><div class="meta"><div class="nm">Burwood Tennis Park</div><div class="ad">Park Avenue, Burwood NSW 2134</div></div></div>
-      <div class="fac"><div class="ph"><img src="assets/hero-granville.jpg" alt="Granville Tennis Courts"></div><div class="meta"><div class="nm">Granville Tennis Courts</div><div class="ad">7A Byrnes St, South Granville NSW 2142</div></div></div>
-    </div>
-
-    <div class="steps">
-      <div class="step"><div class="s">Step 01</div><h4>Enquire</h4><p>Message us with your level and the location that suits you.</p></div>
-      <div class="step"><div class="s">Step 02</div><h4>Book your trial</h4><p>Lock in a $40 group or $89 private trial — no term sign-up.</p></div>
-      <div class="step"><div class="s">Step 03</div><h4>Play</h4><p>Turn up and hit. We'll place you in the right program from there.</p></div>
-    </div>
-
-    <div class="cta">
-      <h3>Book your<br>trial today.</h3>
+    <div class="p5-bottom">
+      <ol class="steps">
+        <li><div><b>Send us a message</b><span>Your age, experience and nearest venue — by phone, SMS, KakaoTalk or the form at wwta.com.au.</span></div></li>
+        <li><div><b>Book your trial</b><span>$40 group or $89 private, paid before your first lesson by bank transfer or cash.</span></div></li>
+        <li><div><b>Play, then pick a term</b><span>Your coach recommends a program. Terms run 10 weeks.</span></div></li>
+      </ol>
       <div class="contact">
-        <b>0450 500 145</b>
-        info@wwta.com.au · wwta.com.au<br>
-        KakaoTalk: jadeninhwa
+        <div class="qrrow">
+          <div class="qr" aria-label="QR code linking to the WWTA enquiry form"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 29 29" class="segno"><path class="qrline" stroke="#0f2c1f" d="M0 0.5h7m1 0h1m1 0h3m2 0h3m4 0h7m-29 1h1m5 0h1m2 0h3m1 0h2m1 0h1m1 0h1m1 0h1m1 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m1 0h3m1 0h1m1 0h4m1 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h2m2 0h1m2 0h1m4 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m3 0h1m1 0h4m2 0h1m3 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h5m2 0h1m1 0h2m3 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-19 1h2m2 0h3m1 0h3m-21 1h1m1 0h1m3 0h2m1 0h1m2 0h3m1 0h1m3 0h1m2 0h1m2 0h1m1 0h1m-28 1h5m1 0h3m1 0h4m4 0h1m1 0h3m3 0h2m-29 1h1m3 0h3m3 0h3m2 0h2m1 0h2m2 0h2m1 0h2m1 0h1m-28 1h5m1 0h1m1 0h1m3 0h1m4 0h1m1 0h6m-26 1h1m1 0h2m2 0h2m5 0h1m1 0h2m3 0h1m1 0h2m4 0h1m-29 1h2m1 0h3m1 0h2m1 0h1m1 0h1m4 0h1m1 0h4m4 0h2m-29 1h1m2 0h2m1 0h2m1 0h1m1 0h6m2 0h1m2 0h1m5 0h1m-29 1h2m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h1m1 0h6m-23 1h1m1 0h1m2 0h2m2 0h6m4 0h1m1 0h1m5 0h1m-26 1h1m5 0h3m1 0h3m1 0h1m1 0h5m2 0h3m-29 1h3m2 0h2m2 0h1m1 0h1m3 0h1m3 0h1m2 0h1m2 0h1m2 0h1m-27 1h1m2 0h1m1 0h2m1 0h1m1 0h2m2 0h1m2 0h1m3 0h1m-24 1h7m3 0h2m1 0h1m2 0h1m2 0h7m1 0h1m-20 1h1m1 0h1m4 0h1m2 0h1m1 0h1m3 0h3m1 0h1m-29 1h7m1 0h1m2 0h7m2 0h1m1 0h1m1 0h1m3 0h1m-29 1h1m5 0h1m2 0h3m2 0h1m1 0h1m2 0h2m3 0h1m2 0h1m-28 1h1m1 0h3m1 0h1m2 0h2m2 0h3m3 0h7m1 0h2m-29 1h1m1 0h3m1 0h1m3 0h1m3 0h3m3 0h2m1 0h4m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m6 0h1m1 0h2m2 0h1m2 0h1m2 0h2m-29 1h1m5 0h1m5 0h1m2 0h1m2 0h1m1 0h1m2 0h3m-26 1h7m1 0h1m2 0h1m2 0h3m2 0h2m1 0h1m1 0h1m3 0h1"/></svg></div>
+          <div><p class="c">Scan to enquire</p><p>Opens our enquiry form at wwta.com.au</p></div>
+        </div>
+        <p class="phone num">0450 500 145</p>
+        <p class="links">info@wwta.com.au<br>KakaoTalk @wwtaaus<br>Instagram @sydney.tennis</p>
       </div>
     </div>
-    <div class="foot"><span class="wm" style="letter-spacing:.14em">WWTA</span><span>Worldwide Tennis Academy · Est. 2010</span><span class="pagenum">05</span></div>
+  </div>
+  <div class="know">
+    <p><b>Cancel 25+ hours ahead</b> and private or team lessons aren't charged (up to 3 times a term).</p>
+    <p><b>Missed a group lesson?</b> Make-up sessions are available, up to 3 times a term.</p>
+    <p><b>Rain?</b> If we cancel, you'll get an SMS an hour before. No SMS means we're playing.</p>
+    <p><b>Under 17?</b> Juniors are enrolled by a parent or guardian.</p>
   </div>
 </section>
 
