@@ -132,21 +132,22 @@ img{display:block;max-width:100%}
 .place b{color:var(--ink)}
 
 /* ══ P3 · 30 · Why WWTA ═══════════════════════════════════ */
-.p3-photo{margin:6.5mm -16mm 0;height:80mm;position:relative}
+.p3-photo{margin:6mm -16mm 0;height:53mm;position:relative}
 .p3-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 84%}
 .p3-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,44,31,0) 60%,rgba(15,44,31,.55) 100%)}
 .p3-photo figcaption{position:absolute;left:16mm;bottom:3mm;z-index:1;color:rgba(255,255,255,.8)}
-.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:8mm;margin-top:7mm}
+.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:8mm;margin-top:6mm}
 .reasons h3{font-size:9.6pt;line-height:1;color:#fff;white-space:nowrap}
 .reasons p{font-size:8.7pt;line-height:1.5;margin-top:2.4mm;color:rgba(242,245,236,.78)}
-.sub-h{display:flex;align-items:center;gap:3mm;margin-top:6.6mm;color:var(--ball)}
+.sub-h{display:flex;align-items:center;gap:3mm;margin-top:5.4mm;color:var(--ball)}
 .sub-h::after{content:"";flex:1;height:.25mm;background:var(--rule-d)}
-.team{display:grid;grid-template-columns:repeat(6,1fr);gap:3mm;margin-top:3.6mm}
+.team{display:grid;grid-template-columns:repeat(6,1fr);gap:3.4mm 3mm;margin-top:3.6mm}
 .team figure img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:50% 22%;border-radius:1mm}
 .team figcaption{margin-top:1.8mm}
 .team figcaption b{display:block;font-family:var(--fx);font-stretch:100%;font-weight:700;font-size:7.8pt;letter-spacing:.02em;color:#fff}
 .team figcaption span{display:block;font-size:6.9pt;color:var(--mute-d);margin-top:.3mm;line-height:1.25}
-.team-more{margin-top:2.6mm;font-size:7.6pt;color:var(--mute-d)}
+.team-more{grid-column:span 3;align-self:center;padding-left:4mm;border-left:.25mm solid var(--rule-d);font-family:var(--fx);font-stretch:68%;font-weight:650;text-transform:uppercase;letter-spacing:.14em;font-size:7.2pt;color:var(--ball);line-height:1.6}
+.team-more span{display:block;font-family:var(--fb);font-stretch:100%;font-weight:500;text-transform:none;letter-spacing:0;font-size:8.4pt;color:var(--mute-d);margin-top:1.2mm}
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:7mm;margin-top:3.6mm}
 .quotes figure{border-top:.5mm solid var(--ball);padding-top:3mm}
 .quotes blockquote{font-size:9pt;line-height:1.5;color:rgba(242,245,236,.9)}
@@ -301,7 +302,7 @@ img{display:block;max-width:100%}
     <div class="p1-cols">
       <div class="who">
         <p class="c">Who we are</p>
-        <p>Worldwide Tennis Academy has coached across Sydney since 2010. Every session is built on scientifically proven technique and tactics — and on the simple belief that tennis should be enjoyed. Today that's more than 2,300 members, a ten-strong team and six venues from Granville to Killara, where first-timers, families, social players and future pros share the game.</p>
+        <p>Worldwide Tennis Academy has coached across Sydney since 2010. Every session is built on scientifically proven technique and tactics — and on the simple belief that tennis should be enjoyed. Today that's more than 2,300 members, a 13-strong team and six venues from Granville to Killara, where first-timers, families, social players and future pros share the game.</p>
       </div>
       <div class="mission">
         <p class="c">Our mission</p>
@@ -401,7 +402,7 @@ img{display:block;max-width:100%}
 
     <div class="reasons">
       <div><h3 class="x">Technique that sticks</h3><p>Coaching built on scientifically proven strategies and tactics, refined on court since 2010 — so you know exactly what to fix, and how.</p></div>
-      <div><h3 class="x">A team of ten</h3><p>Led by Director Jaden S. and Head Coach Joel L., with coaches and reps across every venue — including a dedicated ladies' rep.</p></div>
+      <div><h3 class="x">A team of thirteen</h3><p>Led by Director Jaden S. and Head Coach Joel L., with coaches and reps across every venue — including a dedicated ladies' rep.</p></div>
       <div><h3 class="x">A club, not a class</h3><p>More than 2,300 members. Socials, doubles and a community that keeps people coming back, season after season.</p></div>
     </div>
 
@@ -413,8 +414,11 @@ img{display:block;max-width:100%}
       <figure><img src="assets/coach-jay.jpg" alt="Jay P. serving at night"><figcaption><b>Jay P.</b><span>Operating Manager</span></figcaption></figure>
       <figure><img src="assets/coach-richard.jpg" alt="Richard B. playing a low volley"><figcaption><b>Richard B.</b><span>Coach</span></figcaption></figure>
       <figure><img src="assets/coach-anmol.jpg" alt="Anmol K. hitting a forehand"><figcaption><b>Anmol K.</b><span>Coach</span></figcaption></figure>
+      <figure><img src="assets/coach-wynn.jpg" alt="Wynn hitting a two-handed backhand"><figcaption><b>Wynn</b><span>Coach</span></figcaption></figure>
+      <figure><img src="assets/coach-sanha.jpg" alt="Sanha K. preparing to serve"><figcaption><b>Sanha K.</b><span>Coach</span></figcaption></figure>
+      <figure><img src="assets/coach-baekseung.jpg" alt="Baekseung K. preparing a forehand under floodlights"><figcaption><b>Baekseung K.</b><span>Coach</span></figcaption></figure>
+      <p class="team-more">Also on the team<br><span>Mac L. (Strathfield Rep), Sehee N., Sion K. and Andy L.</span></p>
     </div>
-    <p class="team-more">Also on the team: Mac L. (Strathfield Rep), Sehee N., Sion K. and Andy L.</p>
 
     <p class="sub-h c">In their words</p>
     <div class="quotes">
